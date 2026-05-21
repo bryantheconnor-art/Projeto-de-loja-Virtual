@@ -1,4 +1,4 @@
-# Projeto-de-loja-Virtual
+# Projeto-da-loja-Virtual
 Um projeto desenvolvido para criar um site baseado em uma loja virtual, usando html e css. - Vitor
 Projeto Final (Prof. Vitor) PPS
 Tema:  Desenvolver um site de uma loja de eletrônicos.
