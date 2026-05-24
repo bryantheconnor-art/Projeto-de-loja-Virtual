@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contato / Atendimento | Yushitudo</title>
+  <!-- SEO Meta Tags -->
+  <meta name="description" content="Tire suas dúvidas ou envie uma mensagem diretamente para o WhatsApp comercial da Yushitudo. Atendimento técnico especializado e pós-venda em São Roque.">
+  <meta name="keywords" content="yushitudo, yoshitec, liquitudo, contato, telefone, whatsapp, sao roque, eletronicos sao roque, nerd shop">
+  <meta name="author" content="Yushitudo Corp">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ==========================================================================
+     CSS HACKS - CONTROLES DE ESTADO (CHECKBOXES)
+     ========================================================================== -->
+  <!-- Checkbox para abrir/fechar o carrinho lateral -->
+  <input type="checkbox" id="cart-toggle" class="state-toggle">
+  <!-- Checkbox para abrir/fechar o modal de login/registro -->
+  <input type="checkbox" id="auth-toggle" class="state-toggle">
+
+  <!-- Cabeçalho Principal (Menu Sanduíche Pure CSS) -->
+  <header id="store-header">
+    <!-- Checkbox para o menu sanduíche no mobile -->
+    <input type="checkbox" id="menu-toggle" class="state-toggle">
+
+    <div class="header-top">
+      <!-- Logotipo da Loja -->
+      <a href="index.html" class="logo" id="header-logo">
+        ⚡ <span>Yushitudo</span>
+      </a>
+
+      <!-- Ícones e Controles do Topo (Carrinho, Conta e Menu Hamburguer) -->
+      <div class="header-controls">
+        <!-- Botão para abrir Login (Lança label que altera o checkbox auth-toggle) -->
+        <label for="auth-toggle" class="icon-btn" title="Minha Conta" id="account-btn">
+          👤
+        </label>
+        
+        <!-- Botão para abrir Carrinho (Lança label que altera o checkbox cart-toggle) -->
+        <label for="cart-toggle" class="icon-btn" title="Meu Carrinho" id="cart-btn">
+          🛒 <span class="badge">3</span>
+        </label>
+
+        <!-- Botão Hamburguer no Mobile -->
+        <label for="menu-toggle" class="menu-btn" title="Menu de Navegação" id="hamburger-btn">
+          ☰
+        </label>
+      </div>
+    </div>
+
+    <!-- Links de Navegação Principal (Sibling do menu-toggle para controle CSS) -->
+    <nav id="header-nav">
+      <a href="index.html">Início</a>
+      <a href="produtos.html">Produtos</a>
+      <a href="sobre.html">Sobre Nós</a>
+      <a href="contato.html" class="active">Contato</a>
+    </nav>
+  </header>
+
+  <!-- ==========================================================================
+     INTERATIVIDADE CSS: CARRINHO DE COMPRAS SLIDE-OUT (Sidebar)
+     ========================================================================== -->
+  <div class="cart-overlay"></div>
+  <aside class="cart-sidebar" id="cart-panel">
+    <div class="cart-header">
+      <h3>🛒 Seu Carrinho</h3>
+      <label for="cart-toggle" class="cart-close" aria-label="Fechar Carrinho">&times;</label>
+    </div>
+
+    <!-- Lista de Itens no Carrinho -->
+    <div class="cart-items-container">
+      <!-- Item 1: Headset Gamer -->
+      <div class="cart-item">
+        <div class="cart-item-img">
+          <img src="img/headset.jpg" alt="Headset Gamer Knup GA03 RGB">
+        </div>
+        <div class="cart-item-info">
+          <h4>Headset Gamer Knup GA03</h4>
+          <p>Categoria: Periféricos</p>
+          <div class="cart-item-qty">
+            <span>Qtd: 1</span>
+            <span class="price">R$ 149,90</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 2: Mouse Gamer -->
+      <div class="cart-item">
+        <div class="cart-item-img">
+          <img src="img/mouse.jpg" alt="Mouse Gamer Exbom Pro">
+        </div>
+        <div class="cart-item-info">
+          <h4>Mouse Gamer Exbom 3200 DPI</h4>
+          <p>Categoria: Periféricos</p>
+          <div class="cart-item-qty">
+            <span>Qtd: 1</span>
+            <span class="price">R$ 79,90</span>
+          </div>
+        </div>
+      </div>
+
+      <!-- Item 3: Dados RPG -->
+      <div class="cart-item">
+        <div class="cart-item-img">
+          <img src="img/dados.jpg" alt="Dados de RPG de Obsidian e Ouro">
+        </div>
+        <div class="cart-item-info">
+          <h4>Dados de RPG Runas Douradas</h4>
+          <p>Categoria: Nerd & RPG</p>
+          <div class="cart-item-qty">
+            <span>Qtd: 1</span>
+            <span class="price">R$ 89,90</span>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Rodapé do Carrinho com Link para o Checkout -->
+    <div class="cart-footer">
+      <div class="cart-total-row">
+        <span>Subtotal:</span>
+        <span>R$ 319,70</span>
+      </div>
+      <a href="produtos.html#checkout-form" class="btn" style="width: 100%;">
+        💳 Ir para o Checkout
+      </a>
+    </div>
+  </aside>
+
+  <!-- ==========================================================================
+     INTERATIVIDADE CSS: MODAL DE LOGIN/REGISTRO
+     ========================================================================== -->
+  <div class="modal-overlay">
+    <div class="auth-card">
+      <div class="auth-header">
+        <h3 style="margin:0; font-size:1.3rem;">🛡️ Área do Cliente</h3>
+        <label for="auth-toggle" style="cursor:pointer; font-size:1.5rem; color:var(--text-muted);" aria-label="Fechar Modal">&times;</label>
+      </div>
+
+      <input type="radio" id="auth-tab-login" name="auth-tabs" class="state-toggle" checked>
+      <input type="radio" id="auth-tab-register" name="auth-tabs" class="state-toggle">
+
+      <div class="auth-tabs-nav">
+        <label for="auth-tab-login" class="auth-tab-label">Entrar</label>
+        <label for="auth-tab-register" class="auth-tab-label">Cadastrar</label>
+      </div>
+
+      <!-- Formulário de Login -->
+      <form class="auth-form-block form-login" action="#" method="POST" onsubmit="return false;">
+        <div class="form-group">
+          <label for="login-email">E-mail de Usuário</label>
+          <input type="email" id="login-email" placeholder="cliente@yushitudo.com.br" required>
+        </div>
+        <div class="form-group">
+          <label for="login-password">Senha Secreta</label>
+          <input type="password" id="login-password" placeholder="••••••••" required>
+        </div>
+        <button type="submit" class="btn">⚡ Acessar Conta</button>
+      </form>
+
+      <!-- Formulário de Registro -->
+      <form class="auth-form-block form-register" action="#" method="POST" onsubmit="return false;">
+        <div class="form-group">
+          <label for="reg-name">Nome Completo</label>
+          <input type="text" id="reg-name" placeholder="Ex: Lucas Yoshimura" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-email">E-mail de Contato</label>
+          <input type="email" id="reg-email" placeholder="contato@yushitudo.com.br" required>
+        </div>
+        <div class="form-group">
+          <label for="reg-pass">Nova Senha</label>
+          <input type="password" id="reg-pass" placeholder="Mínimo 8 caracteres" required>
+        </div>
+        <button type="submit" class="btn btn-secondary">📜 Finalizar Cadastro</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- CONTEÚDO PRINCIPAL -->
+  <main id="main-content">
+    <div style="margin-bottom:30px;">
+      <h1 style="margin:0 0 10px 0; font-size:2.5rem; font-weight:800;">Fale <span>Conosco</span></h1>
+      <p style="margin:0; color:var(--text-muted);">Dúvidas sobre hardware, livros, RPG, dados, orçamento de PCs ou suporte? Fale com a Yushitudo comercial!</p>
+    </div>
+
+    <!-- Layout da Página de Contato -->
+    <div class="contact-layout">
+      
+      <!-- Lado Esquerdo: Canais de Comunicação -->
+      <aside class="contact-info">
+        
+        <!-- Canal 1: Telefone -->
+        <div class="contact-card">
+          <div class="contact-icon">📞</div>
+          <div class="contact-details">
+            <h4>Atendimento por Voz</h4>
+            <p>(11) 4712-0000</p>
+            <p>Segunda a Sábado, das 10h às 19h</p>
+          </div>
+        </div>
+
+        <!-- Canal 2: Email -->
+        <div class="contact-card">
+          <div class="contact-icon">✉️</div>
+          <div class="contact-details">
+            <h4>E-mail Comercial</h4>
+            <p>contato@yushitudo.com.br</p>
+            <p>suporte@yushitudo.com.br</p>
+          </div>
+        </div>
+
+        <!-- Canal 3: Sede Física -->
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div class="contact-details">
+            <h4>Nossa Loja (Sede)</h4>
+            <p>Av. Antonino Dias Bastos, 42 - Centro</p>
+            <p>São Roque - SP, CEP 18130-000</p>
+          </div>
+        </div>
+
+        <!-- Mapa Mock em CSS Puro com Pulsar -->
+        <div class="map-mock">
+          <div style="position:absolute; top:0; left:0; width:100%; height:100%; background:radial-gradient(var(--bg-tertiary) 10%, transparent 11%); background-size:12px 12px; opacity:0.15;"></div>
+          <span>📍</span>
+        </div>
+
+      </aside>
+
+      <!-- Lado Direito: Formulário de Contato no WhatsApp (Pure HTML) -->
+      <form action="https://api.whatsapp.com/send" method="GET" target="_blank" style="gap:20px; display: flex; flex-direction: column;">
+        <h3 style="margin:0 0 10px 0; font-size:1.3rem; color:var(--color-secondary); border-bottom:1px solid var(--border-color); padding-bottom:8px;">📬 Enviar Mensagem via WhatsApp</h3>
+        
+        <!-- Target phone number for WhatsApp -->
+        <input type="hidden" name="phone" value="5511999999999">
+        
+        <div style="display:flex; flex-direction:column; gap:6px;">
+          <label for="contact-msg" style="font-size:0.85rem; color:var(--text-muted);">Escreva sua mensagem abaixo (por favor, inclua seu Nome, E-mail ou Telefone para que possamos te responder):</label>
+          <textarea id="contact-msg" name="text" placeholder="Olá Yushitudo! Meu nome é [Seu Nome]... Gostaria de solicitar um orçamento para o produto..." required style="height:180px; resize:vertical;"></textarea>
+        </div>
+
+        <button type="submit" class="btn" style="width:220px; align-self:flex-end; background-color: var(--color-success); border: none;">
+          🟩 Enviar no WhatsApp
+        </button>
+      </form>
+
+    </div>
+
+    <!-- Seção de Acordeão FAQ em HTML5 puro -->
+    <section class="faq-section" id="perguntas-frequentes">
+      <div class="faq-title">
+        <h2>🔮 Perguntas Frequentes (FAQ)</h2>
+        <p style="margin:0; color:var(--text-muted); font-size:1rem; margin-top:5px;">Respostas rápidas do pergaminho de sabedoria da Yushitudo</p>
+      </div>
+
+      <div class="faq-container">
+        
+        <!-- Pergunta 1 -->
+        <details>
+          <summary>Como funciona a entrega expressa em São Roque e região?</summary>
+          <div class="faq-answer">
+            <p>Realizamos entregas via motoboy express em toda a região de São Roque, Araçariguama, Mairinque e Ibiúna no mesmo dia para pedidos fechados até as 14h. Para outras regiões, o despacho é feito via transportadora no dia seguinte.</p>
+          </div>
+        </details>
+
+        <!-- Pergunta 2 -->
+        <details>
+          <summary>Qual a garantia dos produtos eletrônicos e de hardware?</summary>
+          <div class="faq-answer">
+            <p>Todos os nossos componentes de hardware (CPUs, placas de vídeo, mouses) e computadores contam com garantia legal mínima de 1 ano direto conosco, e suporte técnico local na nossa loja física de São Roque, honrando a tradição da antiga Yoshitec.</p>
+          </div>
+        </details>
+
+        <!-- Pergunta 3 -->
+        <details>
+          <summary>Posso parcelar minhas compras no cartão de crédito?</summary>
+          <div class="faq-answer">
+            <p>Sim, nobre cliente! Aceitamos todas as bandeiras de cartão de crédito e oferecemos parcelamento em até 10 vezes mensais, sendo as 3 primeiras parcelas totalmente livres de juros adicionais.</p>
+          </div>
+        </details>
+
+        <!-- Pergunta 4 -->
+        <details>
+          <summary>Os produtos nerds, dados de RPG e livros são novos e originais?</summary>
+          <div class="faq-answer">
+            <p>Sim! Todos os nossos livros de RPG (D&D), dados poliédricos, camisetas geek e board games são 100% novos, lacrados de fábrica e importados diretamente dos distribuidores oficiais, com alta qualidade garantida.</p>
+          </div>
+        </details>
+
+      </div>
+    </section>
+
+  </main>
+
+  <!-- Rodapé Geral da Loja -->
+  <footer id="store-footer">
+    <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: left;">
+      <!-- Coluna 1: Marca -->
+      <div class="footer-brand">
+        <h3 style="color: var(--color-accent); font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">⚡ Yushitudo</h3>
+        <p style="font-size: 0.9rem; line-height: 1.5;">O melhor outlet de eletrônicos, hardware e artigos nerds do interior paulista. Criado a partir do DNA da tradicional Yoshitec em São Roque e a estrutura de descontos de outlet da Liquitudo.</p>
+        <div class="footer-socials" style="margin-top: 15px;">
+          <a href="https://instagram.com" class="footer-social-btn" title="Acesse nosso Instagram" target="_blank" rel="noopener noreferrer">ig</a>
+          <a href="https://facebook.com" class="footer-social-btn" title="Curta no Facebook" target="_blank" rel="noopener noreferrer">fb</a>
+          <a href="https://whatsapp.com" class="footer-social-btn" title="Chame no WhatsApp" target="_blank" rel="noopener noreferrer">wa</a>
+        </div>
+      </div>
+
+      <!-- Coluna 2: Institucional -->
+      <div class="footer-links-col">
+        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Institucional</h4>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li><a href="sobre.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Sobre a Yushitudo</a></li>
+          <li><a href="sobre.html#secret-admin-trigger" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Área Administrativa (Mestre)</a></li>
+          <li><a href="#perguntas-frequentes" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Perguntas Frequentes (FAQ)</a></li>
+          <li><a href="contato.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Trabalhe Conosco / Contato</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 3: Departamentos -->
+      <div class="footer-links-col">
+        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Departamentos</h4>
+        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
+          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Computadores e Laptops</a></li>
+          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Headsets &amp; Mouses Gamer</a></li>
+          <li><a href="produtos.html#filter-rpg" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Dados de RPG &amp; Board Games</a></li>
+          <li><a href="produtos.html#filter-camisas" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Vestuário Geek &amp; Camisetas</a></li>
+        </ul>
+      </div>
+
+      <!-- Coluna 4: Missivas / Newsletter -->
+      <div class="footer-links-col">
+        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Novidades &amp; Ofertas</h4>
+        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--border-color); margin-bottom: 12px;">Assine nosso correio eletrônico e receba ofertas exclusivas e cupons de outlet em primeira mão.</p>
+        <form action="#" method="POST" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 8px;">
+          <label for="newsletter-email-cont" class="state-toggle" style="position:static; opacity:1; width:auto; height:auto; color:var(--text-light); font-size:0.8rem;">Seu melhor e-mail:</label>
+          <input type="email" id="newsletter-email-cont" placeholder="cliente@yushitudo.com.br" required style="padding: 10px; font-size: 0.9rem;">
+          <button type="submit" class="btn" style="padding: 10px; font-size: 0.9rem; min-height: 40px;">🔔 Inscrever na Lista</button>
+        </form>
+      </div>
+    </div>
+
+    <!-- Direitos Autorais -->
+    <div class="footer-bottom" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.85rem; opacity: 0.8;">
+      <p>&copy; 2026 Yushitudo Eletrônicos &amp; Nerd Shop S.A. Todos os direitos reservados. Av. Antonino Dias Bastos, São Roque - SP.</p>
+      <p>Desenvolvido exclusivamente com HTML5 &amp; CSS3 em conformidade com as diretrizes de Acessibilidade WCAG e sem Javascript.</p>
+    </div>
+  </footer>
+
+</body>
+</html>
+
+</body>
+</html>
