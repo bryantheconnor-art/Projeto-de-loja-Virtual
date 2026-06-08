@@ -1,481 +1,300 @@
+<!-- ========================================= -->
+
+<!-- PÁGINA SOBRE - YoshiTudo -->
+
+<!-- ========================================= -->
+
 <!DOCTYPE html>
+
 <html lang="pt-BR">
+
 <head>
+
+  <!-- CONFIGURAÇÕES DA PÁGINA -->
+
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Quem Somos | Sobre a Yushitudo</title>
-  <meta name="description" content="Conheça a história da Yushitudo Eletrônicos & Nerd Shop. Das nossas origens como Yoshitec em São Roque ao modelo outlet da Liquitudo.">
-  <meta name="keywords" content="yushitudo, yoshitec, liquitudo, quem somos, historia, sao roque, eletronicos outlet, rpg, geek, missao visao valores">
-  <meta name="author" content="Yushitudo Corp">
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- TÍTULO -->
+
+  <title>Sobre | YoshiTudo</title>
+
+  <!-- DESCRIÇÃO SEO -->
+
+  <meta name="description" content="Conheça a história da YoshiTudo">
+
+  <!-- CSS -->
+
+  <link rel="stylesheet" href="estilos/geral.css">
+  <link rel="stylesheet" href="estilos/sobre.css">
+
 </head>
+
 <body>
 
-  <!-- ==========================================================================
-     CSS HACKS - CONTROLES DE ESTADO (CHECKBOXES E RÁDIOS)
-     ========================================================================== -->
-  <!-- Checkbox para abrir/fechar o carrinho lateral -->
-  <input type="checkbox" id="cart-toggle" class="state-toggle">
-  <!-- Checkbox para abrir/fechar o modal de login/registro -->
-  <input type="checkbox" id="auth-toggle" class="state-toggle">
+  <!-- ========================================= -->
 
-  <!-- Rádios de controle das abas do Painel Administrativo -->
-  <input type="radio" id="tab-admin-dashboard" name="admin-tab" class="state-toggle" checked>
-  <input type="radio" id="tab-admin-products" name="admin-tab" class="state-toggle">
-  <input type="radio" id="tab-admin-feedbacks" name="admin-tab" class="state-toggle">
-  <input type="radio" id="tab-admin-add" name="admin-tab" class="state-toggle">
+  <!-- CONTROLES CSS (CHECKBOX / RADIO) -->
 
-  <!-- Cabeçalho Principal (Menu Sanduíche Pure CSS) -->
-  <header id="store-header">
-    <input type="checkbox" id="menu-toggle" class="state-toggle">
+  <!-- ========================================= -->
 
-    <div class="header-top">
-      <a href="index.html" class="logo">
-        ⚡ <span>Yushitudo</span>
-      </a>
+  <!-- Abrir carrinho -->
 
-      <div class="header-controls">
-        <label for="auth-toggle" class="icon-btn" title="Minha Conta" id="account-btn">👤</label>
-        <label for="cart-toggle" class="icon-btn" title="Meu Carrinho" id="cart-btn">
-          🛒 <span class="badge">3</span>
-        </label>
-        <label for="menu-toggle" class="menu-btn" title="Menu de Navegação" id="hamburger-btn">☰</label>
-      </div>
-    </div>
+  <input type="checkbox" id="alternar-carrinho" class="controle-estado">
 
-    <nav id="header-nav">
-      <a href="index.html">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="sobre.html" class="active">Sobre Nós</a>
-      <a href="contato.html">Contato</a>
-    </nav>
+  <!-- Abrir login -->
+
+  <input type="checkbox" id="alternar-login" class="controle-estado">
+
+  <!-- ========================================= -->
+
+  <!-- CABEÇALHO -->
+
+  <!-- ========================================= -->
+
+  <header class="cabecalho">
+
+  <!-- LOGO -->
+  <a href="index.html" class="logotipo">
+    ⚡ YoshiTudo
+  </a>
+
+<!-- MENU -->
+<nav class="menu">
+
+  <a href="index.html">Início</a>
+
+  <a href="produtos.html">Produtos</a>
+
+  <a href="sobre.html" class="ativo">
+    Sobre
+  </a>
+
+  <a href="contato.html">Contato</a>
+
+</nav>
+
   </header>
 
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS: CARRINHO DE COMPRAS SLIDE-OUT
-     ========================================================================== -->
-  <div class="cart-overlay"></div>
-  <aside class="cart-sidebar" id="cart-panel">
-    <div class="cart-header">
-      <h3>🛒 Seu Carrinho</h3>
-      <label for="cart-toggle" class="cart-close" aria-label="Fechar Carrinho">&times;</label>
-    </div>
+  <!-- ========================================= -->
 
-    <div class="cart-items-container">
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/headset.jpg" alt="Headset Gamer Knup GA03 RGB">
-        </div>
-        <div class="cart-item-info">
-          <h4>Headset Gamer Knup GA03</h4>
-          <p>Categoria: Periféricos</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 149,90</span>
-          </div>
-        </div>
-      </div>
+  <!-- CARRINHO -->
 
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/mouse.jpg" alt="Mouse Gamer Exbom Pro">
-        </div>
-        <div class="cart-item-info">
-          <h4>Mouse Gamer Exbom 3200 DPI</h4>
-          <p>Categoria: Periféricos</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 79,90</span>
-          </div>
-        </div>
-      </div>
+  <!-- ========================================= -->
 
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/dados.jpg" alt="Dados de RPG de Obsidian e Ouro">
-        </div>
-        <div class="cart-item-info">
-          <h4>Dados de RPG Runas Douradas</h4>
-          <p>Categoria: Nerd & RPG</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 89,90</span>
-          </div>
-        </div>
-      </div>
-    </div>
+<aside class="lateral-carrinho">
 
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span>Subtotal:</span>
-        <span>R$ 319,70</span>
-      </div>
-      <a href="produtos.html#checkout-form" class="btn" style="width: 100%;">
-        💳 Ir para o Checkout
-      </a>
-    </div>
-  </aside>
+<h3>🛒 Carrinho</h3>
 
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS: MODAL DE LOGIN/REGISTRO
-     ========================================================================== -->
-  <div class="modal-overlay">
-    <div class="auth-card">
-      <div class="auth-header">
-        <h3 style="margin:0; font-size:1.3rem;">🛡️ Área do Cliente</h3>
-        <label for="auth-toggle" style="cursor:pointer; font-size:1.5rem; color:var(--text-muted);" aria-label="Fechar Modal">&times;</label>
-      </div>
+<label for="alternar-carrinho" class="botao-fechar">
+  Fechar
+</label>
 
-      <input type="radio" id="auth-tab-login" name="auth-tabs" class="state-toggle" checked>
-      <input type="radio" id="auth-tab-register" name="auth-tabs" class="state-toggle">
+<!-- ITEM -->
+<div class="item-carrinho">
 
-      <div class="auth-tabs-nav">
-        <label for="auth-tab-login" class="auth-tab-label">Entrar</label>
-        <label for="auth-tab-register" class="auth-tab-label">Cadastrar</label>
-      </div>
+  <img src="imagens/headset.jpeg" alt="Headset">
 
-      <form class="auth-form-block form-login" action="#" method="POST" onsubmit="return false;">
-        <div class="form-group">
-          <label for="login-email-sobre">E-mail de Usuário</label>
-          <input type="email" id="login-email-sobre" placeholder="cliente@yushitudo.com.br" required>
-        </div>
-        <div class="form-group">
-          <label for="login-password-sobre">Senha Secreta</label>
-          <input type="password" id="login-password-sobre" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn">⚡ Acessar Conta</button>
-      </form>
-
-      <form class="auth-form-block form-register" action="#" method="POST" onsubmit="return false;">
-        <div class="form-group">
-          <label for="reg-name-sobre">Nome Completo</label>
-          <input type="text" id="reg-name-sobre" placeholder="Ex: Lucas Yoshimura" required>
-        </div>
-        <div class="form-group">
-          <label for="reg-email-sobre">E-mail de Contato</label>
-          <input type="email" id="reg-email-sobre" placeholder="contato@yushitudo.com.br" required>
-        </div>
-        <div class="form-group">
-          <label for="reg-pass-sobre">Nova Senha</label>
-          <input type="password" id="reg-pass-sobre" placeholder="Mínimo 8 caracteres" required>
-        </div>
-        <button type="submit" class="btn btn-secondary">📜 Finalizar Cadastro</button>
-      </form>
-    </div>
+  <div>
+    <h4>Headset Gamer</h4>
+    <p>R$ 149,90</p>
   </div>
 
+</div>
+
+<!-- ITEM -->
+<div class="item-carrinho">
+
+  <img src="imagens/mouse.jpeg" alt="Mouse">
+
+  <div>
+    <h4>Mouse Gamer</h4>
+    <p>R$ 79,90</p>
+  </div>
+
+</div>
+
+  </aside>
+
+  <!-- ========================================= -->
+
+  <!-- MODAL LOGIN -->
+
+  <!-- ========================================= -->
+
+  <div class="fundo-modal">
+
+<div class="cartao-login">
+
+  <h3>Área do Cliente</h3>
+
+  <label for="alternar-login" class="botao-fechar">
+    Fechar
+  </label>
+
+  <!-- FORM LOGIN -->
+  <form>
+
+    <div class="grupo-formulario">
+
+      <label>E-mail</label>
+
+      <input type="email" placeholder="Digite seu email">
+
+    </div>
+
+    <div class="grupo-formulario">
+
+      <label>Senha</label>
+
+      <input type="password" placeholder="Digite sua senha">
+
+    </div>
+
+    <button class="botao">
+      Entrar
+    </button>
+
+  </form>
+
+</div>
+
+  </div>
+
+  <!-- ========================================= -->
+
   <!-- CONTEÚDO PRINCIPAL -->
-  <main id="main-content">
-    
-    <!-- Seção Sobre Nós -->
-    <section class="hero" style="background: linear-gradient(135deg, #fefefe 0%, #eaeaea 100%); border-left: 6px solid var(--color-primary); margin-top: 20px;">
-      <span class="hero-tag" style="background-color: rgba(0,119,153,0.1); color: var(--color-secondary); border: 1px solid rgba(0,119,153,0.2);">Nossa História</span>
-      <h1 style="font-size: 2.2rem; font-weight: 800; margin-bottom: 15px;">Conheça a <span>Yushitudo</span></h1>
-      <p style="font-size: 1.1rem; color: var(--text-dark); margin-bottom: 20px;">A união perfeita de duas grandes referências: a tradição e suporte em informática da <strong>Yoshitec</strong> (São Roque) e o inovador modelo de super descontos do outlet da <strong>Liquitudo</strong> (Araçariguama).</p>
-      
-      <div style="display: grid; grid-template-columns: 1fr; gap: 20px; text-align: left; margin-top: 30px; line-height: 1.6;">
-        <div>
-          <p>Nascida em São Roque como uma pequena oficina técnica de informática liderada pela família Yoshimura, a antiga <em>Yoshitec</em> se destacava pelo atendimento caloroso e pela dedicação no suporte de hardware. No entanto, percebendo a alta demanda por preços mais acessíveis e a febre da cultura pop/nerd na região, decidimos nos reinventar.</p>
-          <p style="margin-top: 15px;">Unindo forças com o modelo revolucionário do e-commerce <em>Liquitudo</em>, que atua na vizinha Araçariguama liquidando excedentes de estoque de grandes marcas a preços inacreditáveis, estruturamos a <strong>Yushitudo Eletrônicos & Nerd Shop</strong>.</p>
-          <p style="margin-top: 15px;">Hoje, operamos na famosa Marginal de São Roque (Av. Antonino Dias Bastos) oferecendo um catálogo outlet imbatível: mouses de alto desempenho, notebooks potentes, headsets gamer modernos, CPUs de última geração, livros de RPG e nerd, dados multifacetados, camisetas geek e jogos de tabuleiro.</p>
-        </div>
-      </div>
-    </section>
 
-    <!-- Seção de Diretrizes / Valores -->
-    <section style="margin-bottom:60px; margin-top: 40px;">
-      <div style="text-align: center; margin-bottom: 30px;">
-        <h2 style="font-size: 1.8rem; font-weight: 800; margin-bottom: 10px;">📜 Nossos Pilares e <span>Diretrizes</span></h2>
-        <p style="margin: 0; color: var(--text-muted);">As regras de ouro da nossa guilda de tecnologia</p>
-      </div>
+  <!-- ========================================= -->
 
-      <div class="products-grid" style="grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));">
-        
-        <article style="padding:30px; display:flex; flex-direction:column; gap:12px; text-align:center; align-items:center;">
-          <span style="font-size:2.5rem;">🔮</span>
-          <h3 style="margin:0; font-size: 1.2rem; font-weight: 700;">Nossa Missão</h3>
-          <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Prover produtos eletrônicos e de cultura nerd de qualidade excepcional com os menores preços possíveis, tornando a tecnologia e o lazer acessíveis para todas as classes e idades.</p>
-        </article>
+  <main>
 
-        <article style="padding:30px; display:flex; flex-direction:column; gap:12px; text-align:center; align-items:center;">
-          <span style="font-size:2.5rem;">🌌</span>
-          <h3 style="margin:0; font-size: 1.2rem; font-weight: 700;">Nossa Visão</h3>
-          <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Ser reconhecida em todo o estado de São Paulo como a maior e mais completa loja outlet nerd e de informática, combinando suporte técnico excelente a descontos agressivos.</p>
-        </article>
+<!-- ========================================= -->
+<!-- SOBRE -->
+<!-- ========================================= -->
 
-        <article style="padding:30px; display:flex; flex-direction:column; gap:12px; text-align:center; align-items:center;">
-          <span style="font-size:2.5rem;">⚡</span>
-          <h3 style="margin:0; font-size: 1.2rem; font-weight: 700;">Nossos Valores</h3>
-          <p style="margin:0; font-size:0.9rem; color:var(--text-muted);">Transparência total nos preços, respeito irrestrito aos direitos do consumidor, fomento ativo da comunidade pop-geek local e amor visceral por hardware e inovação.</p>
-        </article>
+<section class="secao-sobre">
 
-      </div>
-    </section>
+  <h1>Sobre a YoshiTudo</h1>
 
-    <!-- ==========================================================================
-       📊 SEÇÃO: PAINEL ADMINISTRATIVO INTERATIVO (100% CSS)
-       ========================================================================== -->
-    <section id="admin-panel" style="margin-top: 60px; margin-bottom: 60px; scroll-margin-top: 100px;">
-      <div style="margin-bottom: 25px;" id="secret-admin-trigger">
-        <h2 style="font-size: 1.8rem; font-weight: 800;">📊 Painel de <span>Controle</span> do Mestre (Admin)</h2>
-        <p style="margin:5px 0 0 0; color:var(--text-muted); font-size:0.95rem;">Área reservada para simulação funcional de estoque, mural de feedbacks e controle de faturamento em tempo real.</p>
-      </div>
+  <p>
+    Somos uma loja focada em tecnologia,
+    periféricos gamers e produtos geeks.
+  </p>
 
-      <div class="admin-tabs-container">
-        
-        <!-- Barra Lateral de Abas do Admin -->
-        <aside class="admin-sidebar">
-          <h3 style="color: var(--color-accent); font-size: 1rem; margin-bottom: 15px; border-bottom: 1px solid rgba(255,255,255,0.1); padding-bottom: 8px;">⚙️ Admin Menu</h3>
-          <label for="tab-admin-dashboard" class="admin-tab-btn">📈 Overview Geral</label>
-          <label for="tab-admin-products" class="admin-tab-btn">📦 Catálogo/Estoque</label>
-          <label for="tab-admin-feedbacks" class="admin-tab-btn">💬 Pergaminhos/Feedbacks</label>
-          <label for="tab-admin-add" class="admin-tab-btn">➕ Lançar Novo Loot</label>
-        </aside>
+  <p>
+    Trabalhamos com preços acessíveis,
+    suporte especializado e atendimento
+    personalizado.
+  </p>
 
-        <!-- Área de Conteúdo das Abas do Admin -->
-        <div class="admin-content">
-          
-          <!-- TAB 1: OVERVIEW GERAL -->
-          <div class="admin-panel panel-dashboard">
-            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 15px; margin-bottom: 20px;">
-              <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px;">
-                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 5px;">💰 RECEITA DO MÊS</span>
-                <h4 style="font-size: 1.4rem; color: var(--color-success); font-weight: 800; margin: 0;">R$ 48.920,00</h4>
-              </div>
-              <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px;">
-                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 5px;">📦 PEDIDOS EFETUADOS</span>
-                <h4 style="font-size: 1.4rem; color: var(--color-secondary); font-weight: 800; margin: 0;">142 Vendas</h4>
-              </div>
-              <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 8px; padding: 15px;">
-                <span style="font-size: 0.8rem; color: var(--text-muted); font-weight: 600; display: block; margin-bottom: 5px;">👤 CLIENTES ATIVOS</span>
-                <h4 style="font-size: 1.4rem; color: var(--color-primary); font-weight: 800; margin: 0;">876 Contas</h4>
-              </div>
-            </div>
+</section>
 
-            <!-- Gráfico Customizado PURE CSS -->
-            <div class="chart-container">
-              <span style="font-weight: 700; font-size: 0.9rem; color: var(--text-dark); margin-bottom: 10px; display: block;">📊 Gráfico de Faturamento Semanal (Milhares de Reais)</span>
-              <div class="chart-bars-mock">
-                <!-- data-value repassa o valor para o tooltip em CSS hover -->
-                <div class="chart-bar" style="height: 40%;" data-value="R$ 4.000"></div>
-                <div class="chart-bar" style="height: 60%;" data-value="R$ 7.000"></div>
-                <div class="chart-bar" style="height: 50%;" data-value="R$ 5.500"></div>
-                <div class="chart-bar" style="height: 85%;" data-value="R$ 9.800"></div>
-                <div class="chart-bar" style="height: 70%;" data-value="R$ 8.200"></div>
-                <div class="chart-bar" style="height: 95%;" data-value="R$ 14.400"></div>
-              </div>
-            </div>
-          </div>
+<!-- ========================================= -->
+<!-- VALORES -->
+<!-- ========================================= -->
 
-          <!-- TAB 2: INVENTÁRIO/ESTOQUE -->
-          <div class="admin-panel panel-products">
-            <h3 style="margin-top:0; margin-bottom:15px; font-size:1.2rem; color:var(--color-primary); font-weight: 800;">📦 Gerenciamento de Inventário</h3>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">Código</th>
-                    <th scope="col">Produto</th>
-                    <th scope="col">Categoria</th>
-                    <th scope="col">Estoque</th>
-                    <th scope="col">Preço Unitário</th>
-                    <th scope="col">Status</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td>#HDS03</td>
-                    <td><strong>Headset Gamer Knup GA03</strong></td>
-                    <td>Periféricos</td>
-                    <td>42 un.</td>
-                    <td>R$ 149,90</td>
-                    <td><span style="background-color: rgba(27,138,90,0.15); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Ativo</span></td>
-                  </tr>
-                  <tr>
-                    <td>#MSE32</td>
-                    <td><strong>Mouse Gamer Exbom 3200 DPI</strong></td>
-                    <td>Periféricos</td>
-                    <td>24 un.</td>
-                    <td>R$ 79,90</td>
-                    <td><span style="background-color: rgba(27,138,90,0.15); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Ativo</span></td>
-                  </tr>
-                  <tr>
-                    <td>#NTB80</td>
-                    <td><strong>Notebook Gamer Supernova RTX 4080</strong></td>
-                    <td>Computadores</td>
-                    <td>3 un.</td>
-                    <td>R$ 10.499,90</td>
-                    <td><span style="background-color: rgba(255,184,0,0.2); color: #c09000; padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Baixo Estoque</span></td>
-                  </tr>
-                  <tr>
-                    <td>#RPG5E</td>
-                    <td><strong>Livro do Jogador D&amp;D 5ª Edição</strong></td>
-                    <td>Nerd &amp; RPG</td>
-                    <td>15 un.</td>
-                    <td>R$ 249,90</td>
-                    <td><span style="background-color: rgba(27,138,90,0.15); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Ativo</span></td>
-                  </tr>
-                  <tr>
-                    <td>#DDS07</td>
-                    <td><strong>Dados Runas Douradas Set</strong></td>
-                    <td>Nerd &amp; RPG</td>
-                    <td>68 sets</td>
-                    <td>R$ 89,90</td>
-                    <td><span style="background-color: rgba(27,138,90,0.15); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Ativo</span></td>
-                  </tr>
-                  <tr>
-                    <td>#CPU09</td>
-                    <td><strong>Processador Intel Core i9-14900K</strong></td>
-                    <td>Computadores</td>
-                    <td>8 un.</td>
-                    <td>R$ 3.899,90</td>
-                    <td><span style="background-color: rgba(27,138,90,0.15); color: var(--color-success); padding: 2px 6px; border-radius: 4px; font-size: 0.75rem; font-weight: 700;">Ativo</span></td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+<section class="secao-valores">
 
-          <!-- TAB 3: FEEDBACKS E MENSAGENS -->
-          <div class="admin-panel panel-feedbacks">
-            <h3 style="margin-top:0; margin-bottom:15px; font-size:1.2rem; color:var(--color-primary); font-weight: 800;">💬 Histórico de Feedbacks de Clientes</h3>
-            <div class="table-wrapper">
-              <table>
-                <thead>
-                  <tr>
-                    <th scope="col">Cliente</th>
-                    <th scope="col">Produto Comprado</th>
-                    <th scope="col">Avaliação</th>
-                    <th scope="col">Depoimento Rúnico</th>
-                  </tr>
-                </thead>
-                <tbody>
-                  <tr>
-                    <td><strong>Lucas Y. (São Roque)</strong></td>
-                    <td>Headset Knup GA03</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                    <td>Perfeito para call no Discord! Pelo preço do outlet Yushitudo, a qualidade é imbatível.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Mariana C. (Araçariguama)</strong></td>
-                    <td>Notebook Supernova RTX</td>
-                    <td>⭐⭐⭐⭐⭐</td>
-                    <td>Uma máquina! Edito vídeos e jogo sem qualquer engasgo. O frete grátis via WhatsApp foi ótimo.</td>
-                  </tr>
-                  <tr>
-                    <td><strong>Thiago S. (Ibiúna)</strong></td>
-                    <td>Dados Runas Douradas</td>
-                    <td>⭐⭐⭐⭐★</td>
-                    <td>Muito bonitos e bem acabados. Ótimo peso de rolagem nas sessões.</td>
-                  </tr>
-                </tbody>
-              </table>
-            </div>
-          </div>
+  <h2>Nossos Valores</h2>
 
-          <!-- TAB 4: ADICIONAR NOVO PRODUTO -->
-          <div class="admin-panel panel-add">
-            <h3 style="margin-top:0; margin-bottom:15px; font-size:1.2rem; color:var(--color-primary); font-weight: 800;">➕ Cadastrar Novo Produto no Outlet</h3>
-            
-            <form action="#" method="POST" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 12px; background: none; border: none; padding: 0;">
-              <div style="display: grid; grid-template-columns: 1fr; gap: 15px;">
-                <div class="form-group">
-                  <label for="new-loot-name">Nome do Produto</label>
-                  <input type="text" id="new-loot-name" placeholder="Ex: Teclado Mecânico Knup K300" required>
-                </div>
-                <div class="form-group">
-                  <label for="new-loot-cat">Departamento</label>
-                  <select id="new-loot-cat" required>
-                    <option value="">Selecione o Departamento</option>
-                    <option value="computadores">💻 Computadores e Hardware</option>
-                    <option value="perifericos">🎧 Periféricos e Acessórios</option>
-                    <option value="rpg">🐉 Nerd &amp; RPG de Mesa</option>
-                    <option value="camisas">👕 Vestuário Geek</option>
-                  </select>
-                </div>
-              </div>
+  <div class="cartoes">
 
-              <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 15px;">
-                <div class="form-group">
-                  <label for="new-loot-price">Preço Outlet (R$)</label>
-                  <input type="text" id="new-loot-price" placeholder="199,90" required>
-                </div>
-                <div class="form-group">
-                  <label for="new-loot-qty">Estoque Inicial</label>
-                  <input type="number" id="new-loot-qty" placeholder="10" required>
-                </div>
-              </div>
+    <!-- CARD -->
+    <article class="cartao">
 
-              <div class="form-group">
-                <label for="new-loot-desc">Especificações e Descrição do Produto</label>
-                <textarea id="new-loot-desc" placeholder="Detalhes técnicos e diferenciais do produto outlet..." style="height:80px;"></textarea>
-              </div>
+      <h3>⚡ Missão</h3>
 
-              <button type="submit" class="btn" style="margin-top:10px;">⚡ Lançar Produto no Sistema</button>
-            </form>
-          </div>
+      <p>
+        Levar tecnologia de qualidade
+        com preço justo.
+      </p>
 
-        </div>
+    </article>
 
-      </div>
-    </section>
+    <!-- CARD -->
+    <article class="cartao">
+
+      <h3>🌌 Visão</h3>
+
+      <p>
+        Ser referência geek na região.
+      </p>
+
+    </article>
+
+    <!-- CARD -->
+    <article class="cartao">
+
+      <h3>🔮 Valores</h3>
+
+      <p>
+        Transparência, qualidade e inovação.
+      </p>
+
+    </article>
+
+  </div>
+
+</section>
 
   </main>
 
-  <!-- Rodapé Geral -->
-  <footer id="store-footer">
-    <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: left;">
-      <!-- Coluna 1: Marca -->
-      <div class="footer-brand">
-        <h3 style="color: var(--color-accent); font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">⚡ Yushitudo</h3>
-        <p style="font-size: 0.9rem; line-height: 1.5;">O melhor outlet de eletrônicos, hardware e artigos nerds do interior paulista. Criado a partir do DNA da tradicional Yoshitec em São Roque e a estrutura de descontos de outlet da Liquitudo.</p>
-        <div class="footer-socials" style="margin-top: 15px;">
-          <a href="https://instagram.com" class="footer-social-btn" title="Acesse nosso Instagram" target="_blank" rel="noopener noreferrer">ig</a>
-          <a href="https://facebook.com" class="footer-social-btn" title="Curta no Facebook" target="_blank" rel="noopener noreferrer">fb</a>
-          <a href="https://whatsapp.com" class="footer-social-btn" title="Chame no WhatsApp" target="_blank" rel="noopener noreferrer">wa</a>
-        </div>
-      </div>
+  <!-- ========================================= -->
 
-      <!-- Coluna 2: Institucional -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Institucional</h4>
-        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
-          <li><a href="sobre.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Sobre a Yushitudo</a></li>
-          <li><a href="#secret-admin-trigger" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Área Administrativa (Mestre)</a></li>
-          <li><a href="contato.html#perguntas-frequentes" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Perguntas Frequentes (FAQ)</a></li>
-          <li><a href="contato.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Trabalhe Conosco / Contato</a></li>
-        </ul>
-      </div>
+  <!-- RODAPÉ -->
 
-      <!-- Coluna 3: Departamentos -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Departamentos</h4>
-        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
-          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Computadores e Laptops</a></li>
-          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Headsets &amp; Mouses Gamer</a></li>
-          <li><a href="produtos.html#filter-rpg" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Dados de RPG &amp; Board Games</a></li>
-          <li><a href="produtos.html#filter-camisas" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Vestuário Geek &amp; Camisetas</a></li>
-        </ul>
-      </div>
+  <!-- ========================================= -->
 
-      <!-- Coluna 4: Missivas / Newsletter -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Novidades &amp; Ofertas</h4>
-        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--border-color); margin-bottom: 12px;">Assine nosso correio eletrônico e receba ofertas exclusivas e cupons de outlet em primeira mão.</p>
-        <form action="#" method="POST" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 8px;">
-          <label for="newsletter-email-sobre" class="state-toggle" style="position:static; opacity:1; width:auto; height:auto; color:var(--text-light); font-size:0.8rem;">Seu melhor e-mail:</label>
-          <input type="email" id="newsletter-email-sobre" placeholder="cliente@yushitudo.com.br" required style="padding: 10px; font-size: 0.9rem;">
-          <button type="submit" class="btn" style="padding: 10px; font-size: 0.9rem; min-height: 40px;">🔔 Inscrever na Lista</button>
-        </form>
-      </div>
+  <footer class="rodape">
+
+<div class="conteudo-rodape">
+
+  <div class="coluna-rodape">
+    <h4>LOCALIZAÇÃO</h4>
+    <p>Av. CastroConoorSilva</p>
+    <p>Fatecanos- SP</p>
+  </div>
+
+  <div class="coluna-rodape">
+    <h4>CONTATO E REDES SOCIAIS</h4>
+
+    <div class="links-sociais">
+      <a href="https://www.facebook.com/" target="_blank" class="botao-social" aria-label="Facebook">
+        <img src="marcas/facebook.svg" alt="Facebook">
+      </a>
+
+      <a href="https://www.instagram.com/" target="_blank" class="botao-social" aria-label="Instagram">
+        <img src="marcas/instagram.svg" alt="Instagram">
+      </a>
+
+      <a href="https://www.youtube.com/" target="_blank" class="botao-social" aria-label="YouTube">
+        <img src="marcas/youtube.svg" alt="YouTube">
+      </a>
+
+      <a href="https://wa.me/5511999999999" target="_blank" class="botao-social" aria-label="WhatsApp">
+        <img src="marcas/whatsapp.svg" alt="WhatsApp">
+      </a>
     </div>
+  </div>
 
-    <!-- Direitos Autorais -->
-    <div class="footer-bottom" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.85rem; opacity: 0.8;">
-      <p>&copy; 2026 Yushitudo Eletrônicos &amp; Nerd Shop S.A. Todos os direitos reservados. Av. Antonino Dias Bastos, São Roque - SP.</p>
-      <p>Desenvolvido exclusivamente com HTML5 &amp; CSS3 em conformidade com as diretrizes de Acessibilidade WCAG e sem Javascript.</p>
-    </div>
+  <div class="coluna-rodape">
+    <p class="mensagem-rodape">
+      Nós te ajudamos! Entre em contato através de nossas redes sociais.
+    </p>
+  </div>
+
+</div>
+
+<p class="direitos">
+  Copyright © <span>YoshiTudo</span> 2026
+</p>
+
   </footer>
 
 </body>
 </html>
+
+
+
+
