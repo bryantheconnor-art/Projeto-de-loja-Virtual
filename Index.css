@@ -1,0 +1,74 @@
+/* =========================================================
+   CSS DA PÁGINA INICIAL
+========================================================= */
+.faixa {
+  background: var(--cor-secundaria);
+  color: var(--texto-claro);
+  text-align: center;
+  padding: 4rem 1rem;
+  margin-bottom: 0;
+}
+
+.faixa h1 {
+  font-size: 2rem;
+  margin-bottom: .7rem;
+}
+
+.faixa p {
+  margin-bottom: 1.2rem;
+}
+
+.botoes-faixa {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.botoes-faixa a {
+  background: var(--cor-principal);
+  color: var(--texto-claro);
+  padding: .8rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  display: inline-block;
+}
+
+.botoes-faixa a:hover {
+  background: var(--cor-principal-hover);
+}
+
+.botoes-faixa .botao-whatsapp {
+  background: #128c3c;
+  display: inline-flex;
+  align-items: center;
+  gap: .5rem;
+}
+
+.botoes-faixa .botao-whatsapp:hover {
+  background: #0b6b2c;
+}
+
+.botao-whatsapp img {
+  width: 22px;
+  height: 22px;
+}
+
+.chamada {
+  text-align: center;
+  background: var(--fundo-claro);
+  padding: 2.5rem 1rem;
+}
+
+.chamada h2 {
+  color: var(--cor-principal);
+  margin-bottom: .5rem;
+}
+
+@media (max-width: 800px) {
+  .faixa h1 {
+    font-size: 1.5rem;
+  }
+}
+
+
