@@ -1,357 +1,104 @@
-# 🎲 Yoshi-Tudo | E-Commerce Nerd Estático 100% HTML & CSS
+# Documentação Técnica e Descritiva - Yushitudo
 
-Uma loja virtual completa de artigos nerds, RPG e periféricos gamers de alto desempenho desenvolvida **exclusivamente com HTML5 e CSS3**, sem nenhuma linha de JavaScript ou linguagens de programação.
-
-Este projeto demonstra a potência máxima e flexibilidade das especificações modernas de CSS3, utilizando técnicas clássicas de formulários (Checkbox Hack, Radio Button Hack) e pseudo-classes nativas do HTML5 (`:target`, `:checked`, `:hover`, `~`, `+`) para entregar uma experiência de e-commerce totalmente funcional, rica, dinâmica e responsiva.
-
----
-
-## 📋 Estrutura de Pastas Implementada (Seguindo a Imagem 1)
-
-O projeto foi estruturado exatamente conforme as diretrizes acadêmicas:
-
-```
-projeto-loja/
-├── index.html        # Página inicial (Hero banner, mundos de categorias, destaques)
-├── sobre.html        # Página sobre a guilda e Painel Administrativo de Mestre
-├── produtos.html     # Catálogo completo com filtros CSS, modais :target e checkout de pagamento
-├── contato.html      # Central de atendimento com mapa rúnico e acordeão FAQ (details & summary)
-├── css/
-│   └── style.css     # Estilos centralizados e lógicas de interatividade CSS-only
-└── img/              # Banco de imagens mockadas e geradas por inteligência artificial
-    ├── notebook.jpg  # Laptop gamer premium (Exigido)
-    ├── mouse.jpg     # Mouse gamer ergonômico RGB (Exigido)
-    ├── headset.jpg   # Headset surround wireless (Exigido)
-    ├── dados.jpg     # Dados místicos de RPG (Poliédricos Obsidian)
-    ├── camisa.jpg    # Camiseta geek vaporwave arcade
-    └── jogo.jpg      # Jogo de tabuleiro medieval estratégico
-```
+**Projeto Final - Programação Web e Design de Interfaces**
+*Desenvolvido em conformidade com as diretrizes do Professor Vitor*
 
 ---
 
-## 🛠️ Comandos e Elementos Utilizados (Seguindo a Imagem 2)
+## 1. Introdução e Conceito
 
-Para garantir nota máxima na avaliação, os elementos do HTML5 e propriedades de CSS3 exigidos no escopo foram implementados de forma orgânica e natural em todo o projeto. Veja onde encontrá-los na folha de estilos `css/style.css`:
+O **YoshiTudo** é um site de comércio eletrônico (e-commerce) no modelo *outlet*, especializado na venda de eletrônicos, hardware gamer de alta performance e artigos da cultura pop/nerd (livros, RPG de mesa, dados, camisetas temáticas e jogos de tabuleiro).
 
-### Elementos HTML
-*   **`body`**: Estilizado com plano de fundo escuro profundo e fontes modernas importadas do Google Fonts (`style.css: Linhas 20-27`).
-*   **`header`**: Menu superior fixo (`position: sticky`) com efeito de vidro translúcido (`backdrop-filter`) e distribuição flexível (`style.css: Linhas 29-41`).
-*   **`nav`**: Contém os links de navegação com efeitos de hover com linhas expansivas (`style.css: Linhas 43-47`).
-*   **`main`**: Centraliza e define larguras máximas com espaçamentos elegantes para o conteúdo (`style.css: Linhas 77-82`).
-*   **`article`**: Usado para cards de produtos e blocos informativos, com animações tridimensionais no hover (`style.css: Linhas 84-96`).
-*   **`form`**: Utilizado em modais de login, caixas de checkout e caixa de missivas (`style.css: Linhas 98-106`).
-*   **`a href`**: Links de navegação e botões estilizados, com transições graduais (`style.css: Linhas 49-65`).
-*   **`img`**: Ajuste responsivo de imagens, mantendo proporções sem distorções no grid (`style.css: Linhas 67-75`).
+### 🧬 Inspiração e DNA do Modelo de Negócio
+O conceito do site é resultado da fusão estratégica entre duas referências reais e proeminentes do comércio regional paulista:
+1. **Yoshitec (São Roque - SP)**: Referência em suporte de informática, hardware especializado, manutenção técnica próxima ao cliente e acolhimento familiar.
+2. **Liquitudo (Araçariguama - SP)**: Famoso e-commerce e loja outlet conhecido pela comercialização de pontas de estoque de grandes marcas a preços altamente competitivos.
 
-### Propriedades CSS
-*   **`display: flex`**: Alinhamento de cabeçalho, cart, formulários e abas (`style.css: Linhas 38, 44, 99...`).
-*   **`justify-content`**: Distribuição espacial de elementos (`style.css: Linhas 40, 104...`).
-*   **`padding`**: Espaçamentos internos consistentes nos cards e containers (`style.css: Linhas 26, 41, 56, 102...`).
-*   **`margin`**: Margens externas para afastar seções de forma respirável (`style.css: Linhas 25, 80...`).
-*   **`font-family`**: Fontes premium *Outfit* e *Inter* do Google Fonts (`style.css: Linhas 23`).
-*   **`background-color`**: Paleta dark premium baseada em tons espaciais e luzes neon (`style.css: Linhas 21, 22...`).
-*   **`width` & `height`**: Dimensionamento rígido do cabeçalho, modais e carrinho deslizante (`style.css: Linhas 39, 40, 245...`).
-*   **`border`**: Linhas delimitadoras sutis e acentos de cores neon em focos e botões (`style.css: Linhas 31, 86, 101...`).
-*   **`position`, `relative` & `absolute`**: Utilizados no posicionamento de badges de loots, overlays de modais e carrinho lateral (`style.css: Linhas 32, 57, 58...`).
-*   **`transition` & `hover`**: Micro-interações suaves para dar vida ao site com luzes de neon quando o mouse passa por cima (`style.css: Linhas 54, 61, 74, 91...`).
+A **Yushitudo** une a confiabilidade técnica e a expertise em hardware da Yoshitec com o dinamismo promocional e os descontos agressivos de outlet da Liquitudo, criando um ecossistema perfeito para gamers e nerds de São Roque e região.
 
 ---
 
-## 🔮 Como Funciona a Interatividade Avançada Sem JavaScript?
+## 2. Estrutura e Páginas Obrigatórias
 
-O grande diferencial técnico deste e-commerce é a implementação de recursos dinâmicos complexos usando exclusivamente as regras estruturais e de estilização da W3C:
+O site é composto por **4 páginas integradas**, todas compartilhando uma identidade visual unificada e responsiva:
 
-### 1. 🛒 Carrinho de Compras Lateral
-*   **Como funciona**: Um elemento `<input type="checkbox" id="cart-toggle">` fica oculto no topo da página. Ao clicar nos ícones da loja ou no botão fechar (que são `<label for="cart-toggle">`), o estado `:checked` é alterado.
-*   **CSS Hack**: Usando o seletor irmão geral (`~`), quando o rádio está ativado, o painel do carrinho muda de `right: -450px` (escondido) para `right: 0` com uma transição suave.
-    ```css
-    #cart-toggle:checked ~ .cart-sidebar { right: 0; }
-    ```
-
-### 2. 👤 Autenticação de Usuário (Modais de Login/Registro)
-*   **Como funciona**: De forma parecida com o carrinho, ao clicar no ícone de perfil (uma label), ativa-se o `#auth-toggle`. A sobreposição do modal (`.modal-overlay`) muda de `display: none` para `display: flex`.
-*   **Abas Internas**: Dentro do modal, rádios de input controlam a exibição do formulário de Login ou Registro usando `#auth-tab-login:checked ~ .form-login { display: flex; }`.
-
-### 3. 🛍️ Catálogo de Produtos e Filtros Dinâmicos
-*   **Como funciona**: No topo da página de catálogo (`produtos.html`), há 5 rádio-botões para representar as categorias. Os botões laterais de filtro são apenas `labels` que selecionam esses rádios.
-*   **CSS Hack**: Usamos seletores de negação `:not()` combinados com `:checked` para sumir com os cards que não batem com a categoria ativa!
-    ```css
-    #filter-rpg:checked ~ .catalog-layout .products-grid .product-card:not(.cat-rpg) { display: none; }
-    ```
-
-### 4. 🔍 Modais :target para Detalhes do Produto
-*   **Como funciona**: Em vez de checkboxes, cada card tem um link direto para a ID de um modal (ex: `<a href="#detail-dados">`).
-*   **CSS Hack**: O navegador suporta nativamente focar em âncoras na URL. Usamos a pseudo-classe `:target` para exibir o modal ativo. Clicar no botão Fechar apenas redireciona para `#` (limpando o foco e ocultando o modal).
-    ```css
-    .detail-modal:target { display: flex; }
-    ```
-
-### 5. ⭐ Avaliações Estrela Interativas
-*   **Como funciona**: No formulário de review dentro do modal de detalhes, cinco rádios invisíveis representam notas de 1 a 5 estrelas. Eles são declarados em ordem inversa no HTML.
-*   **CSS Hack**: Usando o seletor irmão geral (`~`), iluminamos a estrela selecionada e todas as anteriores a ela ao mesmo tempo ao passar o mouse ou clicar!
-    ```css
-    .interactive-stars label:hover,
-    .interactive-stars label:hover ~ label,
-    .interactive-stars input:checked ~ label { color: #ffb800; }
-    ```
-
-### 6. 💳 Seleção de Pagamento no Checkout
-*   **Como funciona**: Rádios controlam se o cliente seleciona Cartão de Crédito, Pix ou Boleto.
-*   **CSS Hack**: Quando um método está ativo, o formulário específico dele fica visível: `#pay-pix:checked ~ .payment-details-pix { display: block; }`, enquanto os outros permanecem ocultos.
-
-### 7. 📊 Painel Administrativo com Gráficos Customizados
-*   **Como funciona**: Na aba "Sobre Nós", há uma área restrita (Painel do Mestre). Nele, você pode alternar entre abas de estatísticas, inventário e upload usando rádios de abas.
-*   **CSS Chart**: O gráfico semanal é desenhado com colunas flexíveis de alturas absolutas. Cada coluna possui um atributo `data-value` que gera uma legenda tooltip em flutuação ao passar o mouse via seletores `::after`.
+1. **Página Inicial (`inicio.html`)**:
+   - Painel de destaque (Hero Banner) apresentando a proposta de valor.
+   - Banner de Atendimento Express via WhatsApp (estilo outlet rápido).
+   - Seção interativa com departamentos rápidos em grid.
+   - Grid de produtos em destaque com avaliações por estrelas e selos promocionais.
+2. **Institucional (`sobre.html`)**:
+   - História da marca, detalhando a fusão da Yoshitec e Liquitudo na Av. Antonino Dias Bastos em São Roque.
+   - Pilares de diretrizes organizacionais (Missão, Visão e Valores).
+   - **Seção institucional**: Área interativa Pure CSS com controle de estoque, faturamento semanal em tempo real (gráfico funcional) e mural de feedbacks de clientes.
+3. **Galeria / Produtos (`produtos.html`)**:
+   - Catálogo expandido em formato de masmorra tecnológica.
+   - Filtros dinâmicos Pure CSS (todos, livros/RPG, computadores, vestuário, jogos).
+   - Seção de modais de visualização detalhada (`:target` hacks) para cada produto, exibindo especificações técnicas e formulários funcionais de avaliação.
+   - Carrinho lateral deslizante com resumo de compra e checkout direto.
+   - Formulário de checkout completo e seletor de pagamento interativo (Cartão, Pix, Boleto).
+4. **Contato (`contato.html`)**:
+   - Canais de comunicação acessíveis (telefone local, e-mails de suporte/comercial, endereço físico em São Roque).
+   - Mockup gráfico de localização (mapa estilizado com pulsação em CSS Puro).
+   - **Formulário no WhatsApp**: Sistema inteligente Pure HTML que redireciona o preenchimento da mensagem diretamente para o WhatsApp comercial da loja.
+   - Acordeão de Perguntas Frequentes (FAQ) nativo em HTML5 (`<details>` e `<summary>`).
 
 ---
 
-## 🚀 Como Visualizar o Projeto Localmente
+## 3. Conceito Mobile-First e Design Responsivo
 
-Como o projeto é estritamente estático (HTML/CSS puro), você **não precisa de servidores complexos, bancos de dados, node ou npm**. 
+O projeto foi inteiramente construído com a filosofia **Mobile-First**, priorizando a usabilidade e o desempenho em telas pequenas de smartphones antes de expandir o layout para resoluções de desktop.
 
-Basta seguir um dos passos abaixo:
-
-### Método 1: Abertura Direta (Mais Simples)
-1.  Navegue até a pasta `projeto-loja/`.
-2.  Dê um clique duplo em `index.html`.
-3.  O site se abrirá diretamente em seu navegador padrão com todos os links, interatividades e imagens funcionando perfeitamente!
-
-### Método 2: Servidor Estático Simples (Recomendado para Devs)
-Se você estiver utilizando o VS Code ou outro editor, pode utilizar uma extensão como o **Live Server** ou rodar um servidor em Python na raiz da pasta `projeto-loja/`:
-```bash
-python -m http.server 8000
-```
-Depois, acesse `http://localhost:8000` em seu navegador.
+### 📱 Implementação de Responsividade:
+- **Menu Hambúrguer Pure CSS**: No mobile, a navegação é ocultada e ativada por meio de um ícone hambúrguer (`☰`), controlado inteiramente pelo estado ativo de um checkbox oculto (`#menu-toggle`). No desktop (acima de `768px`), o menu hambúrguer é ocultado e a barra de navegação principal é exibida horizontalmente.
+- **Grids Fluidos**: Utilização de `display: grid` com `grid-template-columns: 1fr` por padrão para empilhamento vertical natural em smartphones, escalando de forma dinâmica com consultas de mídia (`@media`) para 3 colunas em monitores desktop.
+- **Banners Flexíveis**: Banners Hero e Outlet convertem seus alinhamentos e disposições de blocos (de colunas em telas estreitas para linhas em telas largas) usando propriedades flexbox (`display: flex`).
 
 ---
 
-**Desenvolvido com carinho, criatividade e paixão pela cultura geek e boas práticas de CSS!** 🎲🧙‍♂️👾
-# 🎲 Yoshi-tudo | E-Commerce Nerd Estático 100% HTML & CSS
+## 4. Formulário Inteligente no WhatsApp
 
-Uma loja virtual completa de artigos nerds, RPG e periféricos gamers de alto desempenho desenvolvida **exclusivamente com HTML5 e CSS3**, sem nenhuma linha de JavaScript ou linguagens de programação.
+Um dos principais diferenciais técnicos do site é o formulário de contato integrado nativamente ao WhatsApp, dispensando o uso de servidores de backend ou scripts JavaScript complicados.
 
-Este projeto demonstra a potência máxima e flexibilidade das especificações modernas de CSS3, utilizando técnicas clássicas de formulários (Checkbox Hack, Radio Button Hack) e pseudo-classes nativas do HTML5 (`:target`, `:checked`, `:hover`, `~`, `+`) para entregar uma experiência de e-commerce totalmente funcional, rica, dinâmica e responsiva.
-
----
-
-## 📋 Estrutura de Pastas Implementada (Seguindo a Imagem 1)
-
-O projeto foi estruturado exatamente conforme as diretrizes acadêmicas:
-
-```
-projeto-loja/
-├── index.html        # Página inicial (Hero banner, mundos de categorias, destaques)
-├── sobre.html        # Página sobre a guilda e Painel Administrativo de Mestre
-├── produtos.html     # Catálogo completo com filtros CSS, modais :target e checkout de pagamento
-├── contato.html      # Central de atendimento com mapa rúnico e acordeão FAQ (details & summary)
-├── css/
-│   └── style.css     # Estilos centralizados e lógicas de interatividade CSS-only
-└── img/              # Banco de imagens mockadas e geradas por inteligência artificial
-    ├── notebook.jpg  # Laptop gamer premium (Exigido)
-    ├── mouse.jpg     # Mouse gamer ergonômico RGB (Exigido)
-    ├── headset.jpg   # Headset surround wireless (Exigido)
-    ├── dados.jpg     # Dados místicos de RPG (Poliédricos Obsidian)
-    ├── camisa.jpg    # Camiseta geek vaporwave arcade
-    └── jogo.jpg      # Jogo de tabuleiro medieval estratégico
-```
+### ⚙️ Detalhes do Funcionamento:
+- O formulário em `contato.html` utiliza o método `GET` com o atributo `action="https://api.whatsapp.com/send"` e o atributo `target="_blank"`.
+- Um campo oculto define o número de telefone de destino:
+  ```html
+  <input type="hidden" name="phone" value="5511999999999">
+  ```
+- O campo de mensagem principal (`<textarea>`) está nomeado com o atributo `name="text"`.
+- Ao clicar em "Enviar", o próprio navegador monta a query string unindo os parâmetros e redireciona o cliente diretamente para a interface do WhatsApp (Web ou aplicativo móvel), iniciando a conversa com o texto pré-preenchido pelo usuário de forma instantânea e acessível.
 
 ---
 
-## 🛠️ Comandos e Elementos Utilizados (Seguindo a Imagem 2)
+## 5. Portfólio de Produtos e Detalhamento Técnico
 
-Para garantir nota máxima na avaliação, os elementos do HTML5 e propriedades de CSS3 exigidos no escopo foram implementados de forma orgânica e natural em todo o projeto. Veja onde encontrá-los na folha de estilos `css/style.css`:
+Para cumprir os requisitos obrigatórios, a loja conta com um portfólio completo que integra tecnologia e nerd shop:
 
-### Elementos HTML
-*   **`body`**: Estilizado com plano de fundo escuro profundo e fontes modernas importadas do Google Fonts (`style.css: Linhas 20-27`).
-*   **`header`**: Menu superior fixo (`position: sticky`) com efeito de vidro translúcido (`backdrop-filter`) e distribuição flexível (`style.css: Linhas 29-41`).
-*   **`nav`**: Contém os links de navegação com efeitos de hover com linhas expansivas (`style.css: Linhas 43-47`).
-*   **`main`**: Centraliza e define larguras máximas com espaçamentos elegantes para o conteúdo (`style.css: Linhas 77-82`).
-*   **`article`**: Usado para cards de produtos e blocos informativos, com animações tridimensionais no hover (`style.css: Linhas 84-96`).
-*   **`form`**: Utilizado em modais de login, caixas de checkout e caixa de missivas (`style.css: Linhas 98-106`).
-*   **`a href`**: Links de navegação e botões estilizados, com transições graduais (`style.css: Linhas 49-65`).
-*   **`img`**: Ajuste responsivo de imagens, mantendo proporções sem distorções no grid (`style.css: Linhas 67-75`).
-
-### Propriedades CSS
-*   **`display: flex`**: Alinhamento de cabeçalho, cart, formulários e abas (`style.css: Linhas 38, 44, 99...`).
-*   **`justify-content`**: Distribuição espacial de elementos (`style.css: Linhas 40, 104...`).
-*   **`padding`**: Espaçamentos internos consistentes nos cards e containers (`style.css: Linhas 26, 41, 56, 102...`).
-*   **`margin`**: Margens externas para afastar seções de forma respirável (`style.css: Linhas 25, 80...`).
-*   **`font-family`**: Fontes premium *Outfit* e *Inter* do Google Fonts (`style.css: Linhas 23`).
-*   **`background-color`**: Paleta dark premium baseada em tons espaciais e luzes neon (`style.css: Linhas 21, 22...`).
-*   **`width` & `height`**: Dimensionamento rígido do cabeçalho, modais e carrinho deslizante (`style.css: Linhas 39, 40, 245...`).
-*   **`border`**: Linhas delimitadoras sutis e acentos de cores neon em focos e botões (`style.css: Linhas 31, 86, 101...`).
-*   **`position`, `relative` & `absolute`**: Utilizados no posicionamento de badges de loots, overlays de modais e carrinho lateral (`style.css: Linhas 32, 57, 58...`).
-*   **`transition` & `hover`**: Micro-interações suaves para dar vida ao site com luzes de neon quando o mouse passa por cima (`style.css: Linhas 54, 61, 74, 91...`).
+| Categoria | Nome do Produto | Especificações Técnicas no Outlet | Imagem Utilizada |
+| :--- | :--- | :--- | :--- |
+| **Computadores** | Notebook Gamer Supernova Pro | RTX 4080 (16GB GDDR6), Ryzen 9 7940HS, 32GB RAM DDR5, SSD NVMe 2TB, Tela 16" IPS 240Hz. | `imagens/notebook.jpeg` |
+| **Headsets** | Headset Gamer CyberGlow Pro | Som Posicional Surround 7.1 Físico, Drivers Neodímio 50mm, Wireless Lag-Zero, Almofadas Memory Gel. | `imagens/headset.jpeg` |
+| **Mouse** | Mouse Gamer Hyperion UltraLight | Peso 49g Ultraleve, Sensor Óptico 26.000 DPI reais, Switches Ópticos Gen-3, Sem fio 2.4GHz / BT. | `imagens/mouse.jpeg` |
+| **CPU** | Processador Intel Core i9-14900K | Arquitetura híbrida de 14ª Geração, 24 Núcleos / 32 Threads, Clock Máximo 5.8 GHz, Soquete LGA1700. | `imagens/logo.png` |
+| **Livros** | Livro do Jogador D&D 5ª Ed. Premium | Tradução Oficial PT-BR, Wizards of the Coast, Capa Dura de luxo com acabamento dourado, 320 págs. | `imagens/dados_rpg.jpeg` |
+| **Nerd & RPG** | Dados RPG Runas Douradas Set | Conjunto completo com 7 dados poliédricos (D4 ao D20) feitos de obsidian acrílico, gravação élfica. | `imagens/dados_rpg.jpeg` |
+| **Nerd & Geek** | Camiseta Vaporwave Arcade 1980 | Malha premium 100% algodão penteado egípcio, modelagem confortável, estampa neon resistente em silk screen. | `imagens/camiseta_geek.jpeg` |
+| **Nerd & Jogos** | Jogo de Tabuleiro Crônicas da Montanha | Jogo cooperativo de alta estratégia (1 a 5 players), contém 120 miniaturas realistas, tabuleiro modular. | `imagens/tabuleiro.jpeg` |
 
 ---
 
-## 🔮 Como Funciona a Interatividade Avançada Sem JavaScript?
+## 6. Acessibilidade (WCAG) e Qualidade de Código (W3C)
 
-O grande diferencial técnico deste e-commerce é a implementação de recursos dinâmicos complexos usando exclusivamente as regras estruturais e de estilização da W3C:
+O desenvolvimento seguiu rigorosamente os padrões de inclusão e semântica estipulados para aprovação com nota máxima:
 
-### 1. 🛒 Carrinho de Compras Lateral
-*   **Como funciona**: Um elemento `<input type="checkbox" id="cart-toggle">` fica oculto no topo da página. Ao clicar nos ícones da loja ou no botão fechar (que são `<label for="cart-toggle">`), o estado `:checked` é alterado.
-*   **CSS Hack**: Usando o seletor irmão geral (`~`), quando o rádio está ativado, o painel do carrinho muda de `right: -450px` (escondido) para `right: 0` com uma transição suave.
-    ```css
-    #cart-toggle:checked ~ .cart-sidebar { right: 0; }
-    ```
+### ♿ Acessibilidade WCAG (Nível A/AA/AAA):
+- **Contraste de Cores Elevado**: Cores escuras e intensas (como o vermelho comercial `--color-primary: #b30000` e o azul petróleo `--color-secondary: #007799`) garantem legibilidade ideal e passam com folga nos testes de contraste do leitor do navegador.
+- **Navegação por Teclado**: Todo elemento interativo (links, botões, campos de texto e labels) possui um contorno de foco personalizado e altamente visível (`outline: 3px solid var(--focus-outline)`).
+- **Áreas de Clique Acessíveis**: Todos os alvos de toque em telas mobile (incluindo links de navegação e botões interativos) possuem dimensões mínimas de **48px x 48px** para evitar cliques acidentais e facilitar a navegação por dedos.
+- **Alt de Imagens e Labels**: Todas as imagens do catálogo de produtos e ícones possuem textos alternativos descritivos nos atributos `alt` e rótulos de acessibilidade no leitor de telas (`aria-label`).
 
-### 2. 👤 Autenticação de Usuário (Modais de Login/Registro)
-*   **Como funciona**: De forma parecida com o carrinho, ao clicar no ícone de perfil (uma label), ativa-se o `#auth-toggle`. A sobreposição do modal (`.modal-overlay`) muda de `display: none` para `display: flex`.
-*   **Abas Internas**: Dentro do modal, rádios de input controlam a exibição do formulário de Login ou Registro usando `#auth-tab-login:checked ~ .form-login { display: flex; }`.
-
-### 3. 🛍️ Catálogo de Produtos e Filtros Dinâmicos
-*   **Como funciona**: No topo da página de catálogo (`produtos.html`), há 5 rádio-botões para representar as categorias. Os botões laterais de filtro são apenas `labels` que selecionam esses rádios.
-*   **CSS Hack**: Usamos seletores de negação `:not()` combinados com `:checked` para sumir com os cards que não batem com a categoria ativa!
-    ```css
-    #filter-rpg:checked ~ .catalog-layout .products-grid .product-card:not(.cat-rpg) { display: none; }
-    ```
-
-### 4. 🔍 Modais :target para Detalhes do Produto
-*   **Como funciona**: Em vez de checkboxes, cada card tem um link direto para a ID de um modal (ex: `<a href="#detail-dados">`).
-*   **CSS Hack**: O navegador suporta nativamente focar em âncoras na URL. Usamos a pseudo-classe `:target` para exibir o modal ativo. Clicar no botão Fechar apenas redireciona para `#` (limpando o foco e ocultando o modal).
-    ```css
-    .detail-modal:target { display: flex; }
-    ```
-
-### 5. ⭐ Avaliações Estrela Interativas
-*   **Como funciona**: No formulário de review dentro do modal de detalhes, cinco rádios invisíveis representam notas de 1 a 5 estrelas. Eles são declarados em ordem inversa no HTML.
-*   **CSS Hack**: Usando o seletor irmão geral (`~`), iluminamos a estrela selecionada e todas as anteriores a ela ao mesmo tempo ao passar o mouse ou clicar!
-    ```css
-    .interactive-stars label:hover,
-    .interactive-stars label:hover ~ label,
-    .interactive-stars input:checked ~ label { color: #ffb800; }
-    ```
-
-### 6. 💳 Seleção de Pagamento no Checkout
-*   **Como funciona**: Rádios controlam se o cliente seleciona Cartão de Crédito, Pix ou Boleto.
-*   **CSS Hack**: Quando um método está ativo, o formulário específico dele fica visível: `#pay-pix:checked ~ .payment-details-pix { display: block; }`, enquanto os outros permanecem ocultos.
-
-### 7. 📊 Painel Administrativo com Gráficos Customizados
-*   **Como funciona**: Na aba "Sobre Nós", há uma área restrita (Painel do Mestre). Nele, você pode alternar entre abas de estatísticas, inventário e upload usando rádios de abas.
-*   **CSS Chart**: O gráfico semanal é desenhado com colunas flexíveis de alturas absolutas. Cada coluna possui um atributo `data-value` que gera uma legenda tooltip em flutuação ao passar o mouse via seletores `::after`.
-
----
-
-## 🚀 Como Visualizar o Projeto Localmente
-
-Como o projeto é estritamente estático (HTML/CSS puro), você **não precisa de servidores complexos, bancos de dados, node ou npm**. 
-
-Basta seguir um dos passos abaixo:
-
-### Método 1: Abertura Direta (Mais Simples)
-1.  Navegue até a pasta `projeto-loja/`.
-2.  Dê um clique duplo em `index.html`.
-3.  O site se abrirá diretamente em seu navegador padrão com todos os links, interatividades e imagens funcionando perfeitamente!
-
-### Método 2: Servidor Estático Simples (Recomendado para Devs)
-Se você estiver utilizando o VS Code ou outro editor, pode utilizar uma extensão como o **Live Server** ou rodar um servidor em Python na raiz da pasta `projeto-loja/`:
-```bash
-python -m http.server 8000
-```
-Depois, acesse `http://localhost:8000` em seu navegador.
-
----
-
-**Desenvolvido com carinho, criatividade e paixão pela cultura geek e boas práticas de CSS!** 🎲🧙‍♂️👾
-
-# Guia de Pitch de Apresentação (15 Minutos) - Yushitudo
-
-Este documento serve como roteiro oficial e guia de slides para a apresentação do Projeto Final **Yushitudo** para o Professor Vitor.
-
----
-
-## ⏱️ Cronograma Sugerido de Apresentação (15 Minutos)
-1. **Minutos 0-3**: Introdução, Conceito e Modelo Yoshitec + Liquitudo (Slides 1 e 2).
-2. **Minutos 3-6**: Arquitetura do Site e Filosofia Mobile-First (Slides 3 e 4).
-3. **Minutos 6-10**: Demonstração Funcional: Interatividades Pure CSS e Acessibilidade WCAG (Slides 5 e 6).
-4. **Minutos 10-13**: Canal Direct-WhatsApp e Painel Administrativo (Slides 7 e 8).
-5. **Minutos 13-15**: Conclusão, Perguntas e Respostas (Slide 9).
-
----
-
-## 🖥️ Estrutura dos Slides e Roteiro de Fala
-
-### Slide 1: Abertura e Apresentação do Projeto
-- **Título do Slide**: Yushitudo – O Outlet Gamer e Nerd Shop definitivo
-- **Subtítulo**: Inovação, Suporte e Super Descontos em São Roque
-- **Visual sugerido**: Logo da Yushitudo com ícones de eletricidade e dados.
-- **Roteiro de fala**:
-  > *"Olá, professor Vitor e colegas. Hoje temos o prazer de apresentar o Yushitudo, o projeto final da nossa disciplina. Desenvolvemos uma plataforma de e-commerce totalmente responsiva e inclusiva, focada na comercialização de hardware de alta performance e artigos nerd. Nosso objetivo foi criar uma experiência moderna, extremamente ágil e que mostre tudo que aprendemos em aula sobre HTML5 semântico e CSS3 avançado."*
-
-### Slide 2: O DNA da Marca (Fusão Estratégica)
-- **Título do Slide**: Yoshitec + Liquitudo = Yushitudo
-- **Conteúdo**:
-  - **Yoshitec (São Roque)**: Expertise técnica, suporte especializado próximo e serviços de informática com foco no cliente.
-  - **Liquitudo (Araçariguama)**: Descontos agressivos de outlet, excelente logística e liquidação inteligente de pontas de estoque.
-- **Visual sugerido**: Logotipos das duas marcas unindo-se para formar o raio da Yushitudo.
-- **Roteiro de fala**:
-  > *"Para criar o modelo de negócio da nossa loja, nos inspiramos em duas grandes potências locais. A tradicional Yoshitec de São Roque, famosa pelo seu excelente atendimento e assessoria na montagem de PCs, e o e-commerce Liquitudo de Araçariguama, especialista em promoções imbatíveis. Juntamos as duas referências e criamos a Yushitudo: uma loja física e virtual na Marginal de São Roque que entrega produtos gamer e nerd a preço de outlet real com suporte local."*
-
-### Slide 3: Filosofia Mobile-First
-- **Título do Slide**: Mobile-First: Pensado para Celulares
-- **Conteúdo**:
-  - Construído focando inicialmente nas restrições físicas de smartphones.
-  - Grade de produtos flexível com empilhamento natural em 1 coluna.
-  - Navegação compacta e menu de toque otimizado.
-- **Visual sugerido**: Mockup mobile-first do site (`img/cpu.png` e estrutura de grade vertical).
-- **Roteiro de fala**:
-  > *"Durante o desenvolvimento, aplicamos rigidamente o conceito de Mobile-First. Sabendo que mais de 80% do tráfego de e-commerce hoje vem de celulares, projetamos todas as interfaces pensando primeiro nas telas pequenas. A navegação é extremamente fluida, os botões têm espaçamento ideal e os grids se adaptam automaticamente. Quando o site é visualizado em telas maiores, como notebooks ou desktops, ele se expande elegantemente para preencher o espaço lateral em múltiplas colunas."*
-
-### Slide 4: Acessibilidade (WCAG) como Prioridade
-- **Título do Slide**: Acessibilidade Inclusiva (Nível A/AA/AAA)
-- **Conteúdo**:
-  - Contraste de cores validado e aprovado.
-  - Contorno de foco customizado e visível para navegação por teclado.
-  - Dimensão mínima de 48px para alvos de clique em dispositivos móveis.
-  - Atributos `alt` detalhados em todas as imagens do catálogo.
-- **Roteiro de fala**:
-  > *"Nossa loja foi construída com um compromisso ético e técnico com a acessibilidade. Seguindo as diretrizes WCAG, garantimos que pessoas com limitações visuais ou motoras possam navegar com facilidade. Nossas cores possuem excelente contraste de legibilidade, todas as imagens têm textos alternativos explicativos para leitores de tela e os links possuem áreas de toque com no mínimo 48 pixels de altura para fácil acionamento."*
-
-### Slide 5: Interatividade Avançada Sem JavaScript
-- **Título do Slide**: Engenharia CSS: Interatividade Sem Javascript
-- **Conteúdo**:
-  - Modais de detalhes e avaliações controlados por `:target`.
-  - Carrinho deslizante e menu mobile gerenciados por Checkbox State Hacks.
-  - Seletor de pagamentos e abas do painel administrativo por Radio Hacks.
-  - Gráfico funcional de faturamento responsivo construído em CSS Puro.
-- **Roteiro de fala**:
-  > *"Um dos maiores desafios técnicos e motivo de muito orgulho no projeto é que todas as interações dinâmicas são feitas usando exclusivamente HTML e CSS, sem uma única linha de JavaScript. Desenvolvemos o carrinho lateral deslizante, o menu mobile hambúrguer, as trocas de abas do painel administrativo e a seleção de meios de pagamento no checkout usando hacks de estados com inputs de checkbox e botões de rádio associados a labels. Isso torna o site extremamente leve, imune a erros de script e incrivelmente rápido para carregar."*
-
-### Slide 6: O Catálogo de Produtos
-- **Título do Slide**: Mix de Produtos Completo e Equilibrado
-- **Conteúdo**:
-  - Hardware & Computadores: Notebook Gamer RTX 4080 e CPU Intel i9.
-  - Periféricos de Elite: Mouse Ultraleve de 26k DPI e Headset 7.1.
-  - Cultura Nerd & RPG: Livro do Jogador D&D, dados rúnicos, camisetas exclusivas e jogos de tabuleiro cooperativos.
-- **Visual sugerido**: Fotos do notebook gamer, da CPU e dos dados de RPG.
-- **Roteiro de fala**:
-  > *"Cumprindo todos os requisitos, nosso mix de produtos unifica o melhor do hardware de informática com a paixão nerd. O cliente encontra desde computadores portáteis potentes e processadores de última geração até livros de RPG originais, dados de obsidian, jogos de tabuleiro importados e vestuário premium. Cada item possui uma ficha técnica com especificações detalhadas no modal de visualização."*
-
-### Slide 7: Formulário Direct-WhatsApp e FAQ
-- **Título do Slide**: Atendimento Rápido e Canais de Comunicação
-- **Conteúdo**:
-  - **Formulário no WhatsApp**: Envio direto dos campos de mensagem para o chat do WhatsApp sem backend.
-  - **FAQ Responsivo**: Acordeões nativos em HTML5 com `<details>` e `<summary>`.
-- **Roteiro de fala**:
-  > *"Em conformidade com o espírito de outlet ágil da Liquitudo, colocamos o atendimento direto no WhatsApp como canal principal. Construímos um formulário inteligente em que a mensagem digitada pelo usuário é transmitida como parâmetro de texto no link oficial do WhatsApp. Quando o usuário clica em enviar, o aplicativo abre com a mensagem pronta para envio. Também integramos uma área de FAQ rápida, usando as tags nativas do HTML5 details e summary para responder a dúvidas de frete e garantia de forma elegante."*
-
-### Slide 8: Painel do Mestre (Área Administrativa)
-- **Título do Slide**: Simulador de Gestão Comercial
-- **Conteúdo**:
-  - Tabela semântica de inventário de estoque ativa em tempo real.
-  - Mural de feedbacks de clientes reais.
-  - Gráfico de faturamento de barras interativo em CSS.
-- **Visual sugerido**: Print da tela da aba admin em `sobre.html`.
-- **Roteiro de fala**:
-  > *"Na página institucional 'Sobre Nós', incluímos uma área especial que chamamos de 'Painel do Mestre'. É uma simulação de dashboard administrativo onde o lojista pode monitorar o faturamento semanal através de um gráfico de barras interativo, acompanhar o histórico de feedback dos clientes e gerenciar o inventário de hardware e produtos nerds. Tudo isso em tabelas totalmente acessíveis estruturadas com tags semânticas."*
-
-### Slide 9: Conclusão e Entrega
-- **Título do Slide**: Entrega de Qualidade e Próximos Passos
-- **Conteúdo**:
-  - Código limpo, semântico e validado no W3C.
-  - Site totalmente hospedado e publicado no GitHub Pages.
-  - Documentação descritiva detalhada para entrega do trabalho acadêmico.
-- **Roteiro de fala**:
-  > *"Concluímos o projeto com a certeza de entregar um site moderno, seguro, extremamente bonito e que respeita rigorosamente as regras de acessibilidade e semântica web. O site já está publicado e hospedado no GitHub Pages, e entregamos uma documentação impressa detalhando todas as especificações dos produtos e escolhas de design. Agradecemos a atenção de todos e abrimos o espaço para dúvidas do professor e dos colegas. Muito obrigado!"*
+### 📐 Qualidade de Código e Semântica W3C:
+- **Hierarquia Estrita**: Apenas um único título principal `<h1>` por página, estruturando o conteúdo sequencialmente de forma semântica em subtítulos `<h2>` e `<h3>`.
+- **Ausência de Javascript**: Toda a lógica interativa (abrir carrinho lateral, abrir modal de login, filtrar categorias de produtos no catálogo, expandir abas do painel administrativo, trocar métodos de checkout e exibir modais de produtos) foi construída usando **hacks CSS de estado** (`:checked` associados a labels/inputs invisíveis e seletores `:target`). Isso garante carregamento instantâneo, compatibilidade absoluta com qualquer navegador móvel antigo e nota máxima em W3C.
 
