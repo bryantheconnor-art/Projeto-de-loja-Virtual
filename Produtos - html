@@ -1,866 +1,264 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
+
+  <!-- CONFIGURAÇÕES DA PÁGINA -->
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Outlet Yushitudo | Eletrônicos & Nerd Shop</title>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="Explore o catálogo de itens do outlet Yushitudo: processadores CPU, dados de RPG, board games, headsets e notebooks gamers incríveis. Inspirado na Yoshitec e Liquitudo.">
-  <meta name="keywords" content="yushitudo, yoshitec, liquitudo, eletronicos sao roque, nerd shop, dados rpg, headset gamer, mouse gamer, notebook gamer, pc gamer, cpu">
-  <meta name="author" content="Yushitudo Corp">
-  <link rel="stylesheet" href="css/style.css">
+
+  <!-- TÍTULO DO SITE -->
+  <title>Produtos | YoshiTudo</title>
+
+  <!-- DESCRIÇÃO PARA GOOGLE -->
+  <meta name="description" content="Confira os produtos gamer e geek da YoshiTudo.">
+
+  <!-- CSS -->
+  <link rel="stylesheet" href="estilos/geral.css">
+  <link rel="stylesheet" href="estilos/produtos.css">
+
 </head>
 <body>
 
-  <!-- ==========================================================================
-     CSS HACKS - CONTROLES DE ESTADO (CHECKBOXES E RÁDIOS)
-     ========================================================================== -->
-  <!-- Checkbox para abrir/fechar o carrinho lateral -->
-  <input type="checkbox" id="cart-toggle" class="state-toggle">
-  <!-- Checkbox para abrir/fechar o modal de login/registro -->
-  <input type="checkbox" id="auth-toggle" class="state-toggle">
+  <!-- =========================================
+       CABEÇALHO DO SITE
+  ========================================== -->
+  <header class="cabecalho">
 
-  <!-- Rádios para filtragem do Catálogo (Devem estar antes do Grid de Produtos no DOM) -->
-  <input type="radio" id="filter-all" name="prod-filter" class="state-toggle" checked>
-  <input type="radio" id="filter-rpg" name="prod-filter" class="state-toggle">
-  <input type="radio" id="filter-perifericos" name="prod-filter" class="state-toggle">
-  <input type="radio" id="filter-camisas" name="prod-filter" class="state-toggle">
-  <input type="radio" id="filter-jogos" name="prod-filter" class="state-toggle">
+    <!-- LOGO -->
+    <a href="index.html" class="logotipo">
+      ⚡ YoshiTudo
+    </a>
 
-  <!-- Cabeçalho Principal (Menu Sanduíche Pure CSS) -->
-  <header id="store-header">
-    <!-- Checkbox para o menu sanduíche no mobile -->
-    <input type="checkbox" id="menu-toggle" class="state-toggle">
-
-    <div class="header-top">
-      <!-- Logotipo da Loja -->
-      <a href="index.html" class="logo" id="header-logo">
-        ⚡ <span>Yushitudo</span>
-      </a>
-
-      <!-- Ícones e Controles do Topo (Carrinho, Conta e Menu Hamburguer) -->
-      <div class="header-controls">
-        <!-- Botão para abrir Login (Lança label que altera o checkbox auth-toggle) -->
-        <label for="auth-toggle" class="icon-btn" title="Minha Conta" id="account-btn">
-          👤
-        </label>
-        
-        <!-- Botão para abrir Carrinho (Lança label que altera o checkbox cart-toggle) -->
-        <label for="cart-toggle" class="icon-btn" title="Meu Carrinho" id="cart-btn">
-          🛒 <span class="badge">3</span>
-        </label>
-
-        <!-- Botão Hamburguer no Mobile -->
-        <label for="menu-toggle" class="menu-btn" title="Menu de Navegação" id="hamburger-btn">
-          ☰
-        </label>
-      </div>
-    </div>
-
-    <!-- Links de Navegação Principal (Sibling do menu-toggle para controle CSS) -->
-    <nav id="header-nav">
+    <!-- MENU -->
+    <nav class="menu">
       <a href="index.html">Início</a>
-      <a href="produtos.html" class="active">Produtos</a>
-      <a href="sobre.html">Sobre Nós</a>
+      <a href="produtos.html" class="ativo">Produtos</a>
+      <a href="sobre.html">Sobre</a>
       <a href="contato.html">Contato</a>
     </nav>
+
   </header>
 
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS: CARRINHO DE COMPRAS SLIDE-OUT (Sidebar)
-     ========================================================================== -->
-  <div class="cart-overlay"></div>
-  <aside class="cart-sidebar" id="cart-panel">
-    <div class="cart-header">
-      <h3>🛒 Seu Carrinho</h3>
-      <label for="cart-toggle" class="cart-close" aria-label="Fechar Carrinho">&times;</label>
-    </div>
+  <!-- =========================================
+       TÍTULO DA PÁGINA
+  ========================================== -->
+  <section class="titulo-pagina">
 
-    <!-- Lista de Itens no Carrinho -->
-    <div class="cart-items-container">
-      <!-- Item 1: Headset Gamer -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/headset.jpg" alt="Headset Gamer Knup GA03 RGB">
-        </div>
-        <div class="cart-item-info">
-          <h4>Headset Gamer Knup GA03</h4>
-          <p>Categoria: Periféricos</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 149,90</span>
-          </div>
-        </div>
+    <h1>📦 Produtos em Destaque</h1>
+
+    <p>
+      Hardware, periféricos gamer e produtos geek.
+    </p>
+
+  </section>
+
+  <!-- =========================================
+       FILTROS
+  ========================================== -->
+  <section class="filtros">
+
+    <button>Todos</button>
+    <button>Periféricos</button>
+    <button>RPG</button>
+    <button>Geek</button>
+    <button>Jogos</button>
+
+  </section>
+
+  <!-- =========================================
+       LISTA DE PRODUTOS
+  ========================================== -->
+  <main class="produtos grade-produtos">
+
+    <!-- PRODUTO 1 -->
+    <article class="cartao-produto">
+
+      <!-- IMAGEM -->
+      <img src="imagens/notebook.jpeg" alt="Notebook Gamer">
+
+      <!-- INFORMAÇÕES -->
+      <div class="info-produto">
+
+        <span class="categoria">💻 Notebook</span>
+
+        <h2>Notebook Gamer RTX 4080</h2>
+
+        <p class="preco">
+          <span class="preco-de">De R$ 12.999,90</span>
+          <span class="preco-por">Por R$ 10.499,90</span>
+        </p>
+
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
+
       </div>
 
-      <!-- Item 2: Mouse Gamer -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/mouse.jpg" alt="Mouse Gamer Exbom Pro">
-        </div>
-        <div class="cart-item-info">
-          <h4>Mouse Gamer Exbom 3200 DPI</h4>
-          <p>Categoria: Periféricos</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 79,90</span>
-          </div>
-        </div>
+    </article>
+
+    <!-- PRODUTO 2 -->
+    <article class="cartao-produto">
+
+      <img src="imagens/headset.jpeg" alt="Headset Gamer">
+
+      <div class="info-produto">
+
+        <span class="categoria">🎧 Headset</span>
+
+        <h2>Headset Gamer RGB</h2>
+
+        <p class="preco">
+          <span class="preco-de">De R$ 199,90</span>
+          <span class="preco-por">Por R$ 149,90</span>
+        </p>
+
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
+
       </div>
 
-      <!-- Item 3: Dados RPG -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/dados.jpg" alt="Dados de RPG de Obsidian e Ouro">
-        </div>
-        <div class="cart-item-info">
-          <h4>Dados de RPG Runas Douradas</h4>
-          <p>Categoria: Nerd & RPG</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 89,90</span>
-          </div>
-        </div>
-      </div>
-    </div>
+    </article>
 
-    <!-- Rodapé do Carrinho com Link para o Checkout -->
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span>Subtotal:</span>
-        <span>R$ 319,70</span>
-      </div>
-      <a href="produtos.html#checkout-form" class="btn" style="width: 100%;" onclick="document.getElementById('cart-toggle').checked = false;">
-        💳 Ir para o Checkout
-      </a>
-    </div>
-  </aside>
+    <!-- PRODUTO 3 -->
+    <article class="cartao-produto">
 
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS: MODAL DE LOGIN/REGISTRO
-     ========================================================================== -->
-  <div class="modal-overlay">
-    <div class="auth-card">
-      <div class="auth-header">
-        <h3 style="margin:0; font-size:1.3rem;">🛡️ Área do Cliente</h3>
-        <label for="auth-toggle" style="cursor:pointer; font-size:1.5rem; color:var(--text-muted);" aria-label="Fechar Modal">&times;</label>
+      <img src="imagens/mouse.jpeg" alt="Mouse Gamer">
+
+      <div class="info-produto">
+
+        <span class="categoria">🖱️ Mouse</span>
+
+        <h2>Mouse Gamer 3200 DPI</h2>
+
+        <p class="preco">
+          <span class="preco-de">De R$ 109,90</span>
+          <span class="preco-por">Por R$ 79,90</span>
+        </p>
+
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
+
       </div>
 
-      <input type="radio" id="auth-tab-login" name="auth-tabs" class="state-toggle" checked>
-      <input type="radio" id="auth-tab-register" name="auth-tabs" class="state-toggle">
+    </article>
 
-      <div class="auth-tabs-nav">
-        <label for="auth-tab-login" class="auth-tab-label">Entrar</label>
-        <label for="auth-tab-register" class="auth-tab-label">Cadastrar</label>
+    <!-- PRODUTO 4 -->
+    <article class="cartao-produto">
+
+      <img src="imagens/dados_rpg.jpeg" alt="Dados RPG">
+
+      <div class="info-produto">
+
+        <span class="categoria">🎲 RPG</span>
+
+        <h2>Dados RPG Dourados</h2>
+
+        <p class="preco">R$ 89,90</p>
+
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
+
       </div>
 
-      <!-- Formulário de Login -->
-      <form class="auth-form-block form-login" action="#" method="POST" onsubmit="return false;">
-        <div class="form-group">
-          <label for="login-email">E-mail de Usuário</label>
-          <input type="email" id="login-email" placeholder="cliente@yushitudo.com.br" required>
-        </div>
-        <div class="form-group">
-          <label for="login-password">Senha Secreta</label>
-          <input type="password" id="login-password" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn">⚡ Acessar Conta</button>
-      </form>
+    </article>
 
-      <!-- Formulário de Registro -->
-      <form class="auth-form-block form-register" action="#" method="POST" onsubmit="return false;">
-        <div class="form-group">
-          <label for="reg-name">Nome Completo</label>
-          <input type="text" id="reg-name" placeholder="Ex: Lucas Yoshimura" required>
-        </div>
-        <div class="form-group">
-          <label for="reg-email">E-mail de Contato</label>
-          <input type="email" id="reg-email" placeholder="contato@yushitudo.com.br" required>
-        </div>
-        <div class="form-group">
-          <label for="reg-pass">Nova Senha</label>
-          <input type="password" id="reg-pass" placeholder="Mínimo 8 caracteres" required>
-        </div>
-        <button type="submit" class="btn btn-secondary">📜 Finalizar Cadastro</button>
-      </form>
-    </div>
-  </div>
+    <!-- PRODUTO 5 -->
+    <article class="cartao-produto">
 
-  <!-- CONTEÚDO PRINCIPAL -->
-  <main id="main-content">
-    <div style="margin-bottom:30px;">
-      <h1 style="margin:0 0 10px 0; font-size:2.5rem; font-weight:800;">Catálogo de <span>Produtos</span></h1>
-      <p style="margin:0; color:var(--text-muted);">Explore nosso outlet: compre hardware, computadores potentes, headsets gamer, CPUs e os melhores livros e artigos nerds com super descontos.</p>
-    </div>
+      <img src="imagens/camiseta_geek.jpeg" alt="Camiseta Geek">
 
-    <!-- Layout do Catálogo (Filtro Lateral + Grid) -->
-    <div class="catalog-layout">
-      
-      <!-- Barra Lateral de Filtros (Controla os rádios do topo via labels) -->
-      <aside class="filter-sidebar">
-        <div class="filter-group">
-          <h3>📂 Departamentos</h3>
-          <ul class="filter-list">
-            <li class="filter-item">
-              <label for="filter-all" class="filter-label">🔮 Todos os Itens</label>
-            </li>
-            <li class="filter-item">
-              <label for="filter-rpg" class="filter-label">🐉 Livros & RPG</label>
-            </li>
-            <li class="filter-item">
-              <label for="filter-perifericos" class="filter-label">💻 Computadores & Periféricos</label>
-            </li>
-            <li class="filter-item">
-              <label for="filter-camisas" class="filter-label">👕 Vestuário Geek</label>
-            </li>
-            <li class="filter-item">
-              <label for="filter-jogos" class="filter-label">🏰 Jogos de Tabuleiro</label>
-            </li>
-          </ul>
-        </div>
+      <div class="info-produto">
 
-        <div class="filter-group" style="margin-top: 30px;">
-          <h3>💎 Raridade / Status</h3>
-          <ul class="filter-list">
-            <li class="filter-item">
-              <input type="checkbox" id="status-promo" checked style="margin-right:10px;">
-              <label for="status-promo" class="filter-label">Em Promoção</label>
-            </li>
-            <li class="filter-item">
-              <input type="checkbox" id="status-new" style="margin-right:10px;">
-              <label for="status-new" class="filter-label">Lançamentos</label>
-            </li>
-            <li class="filter-item">
-              <input type="checkbox" id="status-stock" checked style="margin-right:10px;">
-              <label for="status-stock" class="filter-label">Em Estoque</label>
-            </li>
-          </ul>
-        </div>
-      </aside>
+        <span class="categoria">👕 Geek</span>
 
-      <!-- Grid de Exibição dos Produtos -->
-      <section class="products-grid">
-        
-        <!-- CARD DO PRODUTO 1: Dados RPG (dados.jpg) -->
-        <article class="product-card cat-rpg">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Populares</span>
-            <img src="img/dados.jpg" alt="Dados de RPG Runas Douradas">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">RPG & Acessórios</span>
-            <a href="#detail-dados" class="product-title">Dados de RPG Místicos - Runas Douradas (Set d20)</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(42)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 120,00</span>
-                <span class="current-price">R$ 89,90</span>
-              </div>
-              <a href="#detail-dados" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
+        <h2>Camiseta Retro YoshiTudo</h2>
 
-        <!-- CARD DO PRODUTO 2: Camiseta Arcade (camisa.jpg) -->
-        <article class="product-card cat-camisas">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-new">Novidade</span>
-            <img src="img/camisa.jpg" alt="Camiseta Geek Arcade">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Vestuário Geek</span>
-            <a href="#detail-camisa" class="product-title">Camiseta Geek Premium - Vaporwave Arcade 1980</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐★ <span class="rating-count">(19)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="current-price">R$ 79,90</span>
-              </div>
-              <a href="#detail-camisa" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
+        <p class="preco">R$ 79,90</p>
 
-        <!-- CARD DO PRODUTO 3: Headset Gamer (headset.jpg) -->
-        <article class="product-card cat-perifericos">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Oferta</span>
-            <img src="img/headset.jpg" alt="Headset Gamer CyberGlow">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Arsenal Gamer</span>
-            <a href="#detail-headset" class="product-title">Headset Gamer Wireless CyberGlow Pro Surround 7.1</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(87)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 450,00</span>
-                <span class="current-price">R$ 349,90</span>
-              </div>
-              <a href="#detail-headset" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
 
-        <!-- CARD DO PRODUTO 4: Jogo de Tabuleiro (jogo.jpg) -->
-        <article class="product-card cat-jogos">
-          <div class="product-img-wrapper">
-            <img src="img/jogo.jpg" alt="Jogo de Tabuleiro Dragon Quest">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Jogos de Tabuleiro</span>
-            <a href="#detail-jogo" class="product-title">Board Game Clássico - Crônicas da Montanha do Dragão</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐★ <span class="rating-count">(31)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="current-price">R$ 289,90</span>
-              </div>
-              <a href="#detail-jogo" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 5: Notebook Gamer (notebook.jpg) - EXIGIDO NA FOTO -->
-        <article class="product-card cat-perifericos">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Epic Loot</span>
-            <img src="img/notebook.jpg" alt="Notebook Gamer Supernova">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Arsenal Gamer</span>
-            <a href="#detail-notebook" class="product-title">Notebook Gamer Supernova Pro - RTX 4080, Ryzen 9</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(11)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 12.990,00</span>
-                <span class="current-price">R$ 10.499,90</span>
-              </div>
-              <a href="#detail-notebook" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 6: Mouse Gamer (mouse.jpg) - EXIGIDO NA FOTO -->
-        <article class="product-card cat-perifericos">
-          <div class="product-img-wrapper">
-            <img src="img/mouse.jpg" alt="Mouse Gamer Hyperion">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Arsenal Gamer</span>
-            <a href="#detail-mouse" class="product-title">Mouse Gamer Hyperion UltraLight - 26k DPI, Sensor Rúnico</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(53)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="current-price">R$ 219,90</span>
-              </div>
-              <a href="#detail-mouse" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 7: Processador CPU (cpu.png) -->
-        <article class="product-card cat-perifericos">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-new">Hardware</span>
-            <img src="img/cpu.png" alt="Processador Intel Core i9 14900K de alta performance">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Arsenal Gamer (CPU)</span>
-            <a href="#detail-cpu" class="product-title">Processador Intel Core i9-14900K (5.8 GHz, 24 Cores)</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(28)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 4.290,00</span>
-                <span class="current-price">R$ 3.899,90</span>
-              </div>
-              <a href="#detail-cpu" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 8: Livro D&D Player's Handbook (dados.jpg) -->
-        <article class="product-card cat-rpg">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Livros</span>
-            <img src="img/dados.jpg" alt="Livro do Jogador Dungeons and Dragons D&D 5ª Edição Premium">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">RPG & Acessórios</span>
-            <a href="#detail-livro" class="product-title">Livro do Jogador D&D 5ª Edição - Manual de RPG Oficial</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(94)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 290,00</span>
-                <span class="current-price">R$ 249,90</span>
-              </div>
-              <a href="#detail-livro" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Detalhes</a>
-            </div>
-          </div>
-        </article>
-
-      </section>
-    </div>
-
-    <!-- ==========================================================================
-       MODAIS DE DETALHE DOS PRODUTOS (:target HACKS 100% CSS)
-       ========================================================================== -->
-    
-    <!-- Modal 1: Dados RPG -->
-    <div id="detail-dados" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/dados.jpg" alt="Dados RPG Místicos">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">RPG & Acessórios</span>
-          <h2>Dados RPG Runas Douradas</h2>
-          <p class="description">Forjados no fogo das montanhas profundas do reino, este conjunto completo de 7 dados poliédricos (D4 a D20) é feito de obsidian acrílico e pintado com runas élficas douradas. Garantia de acertos críticos naturais.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Material: Obsidian Acrílico</li>
-              <li>Quantidade: Set com 7 dados</li>
-              <li>Estilo: Runas Élficas</li>
-              <li>Brilha na Luz Negra: Sim</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 89,90</div>
-          
-          <!-- Formulário de Avaliação Interno Estrelas -->
-          <form action="#" method="POST" onsubmit="return false;" style="padding:15px; border:1px solid var(--border-color); background:none; margin-bottom:20px; gap:8px;">
-            <label style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">Avalie este Item:</label>
-            <div class="interactive-stars">
-              <input type="radio" id="star5-dados" name="rating-dados" value="5"><label for="star5-dados">★</label>
-              <input type="radio" id="star4-dados" name="rating-dados" value="4"><label for="star4-dados">★</label>
-              <input type="radio" id="star3-dados" name="rating-dados" value="3"><label for="star3-dados">★</label>
-              <input type="radio" id="star2-dados" name="rating-dados" value="2"><label for="star2-dados">★</label>
-              <input type="radio" id="star1-dados" name="rating-dados" value="1"><label for="star1-dados">★</label>
-            </div>
-            <textarea placeholder="Deixe seu pergaminho de feedback..." style="height:60px; padding:8px; font-size:0.8rem;"></textarea>
-            <button type="submit" class="btn" style="padding:6px 12px; font-size:0.8rem; width:fit-content; margin-top:5px;">⭐ Enviar Avaliação</button>
-          </form>
-
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 2: Camiseta Arcade -->
-    <div id="detail-camisa" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/camisa.jpg" alt="Camiseta Arcade">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Vestuário Geek</span>
-          <h2>Camiseta Vaporwave Arcade 1980</h2>
-          <p class="description">Vista a pura nostalgia dos anos 80! Confeccionada com malha 100% algodão egípcio penteado, esta camiseta traz uma estampa em silk neon de alta durabilidade retratando um fliperama clássico com efeitos glitch.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Material: 100% Algodão Penteado</li>
-              <li>Corte: Premium Confort</li>
-              <li>Tamanhos: P ao XGG</li>
-              <li>Estampa: Silk Screen Neon</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 79,90</div>
-          
-          <form action="#" method="POST" onsubmit="return false;" style="padding:15px; border:1px solid var(--border-color); background:none; margin-bottom:20px; gap:8px;">
-            <label style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">Avalie este Item:</label>
-            <div class="interactive-stars">
-              <input type="radio" id="star5-camisa" name="rating-camisa" value="5"><label for="star5-camisa">★</label>
-              <input type="radio" id="star4-camisa" name="rating-camisa" value="4"><label for="star4-camisa">★</label>
-              <input type="radio" id="star3-camisa" name="rating-camisa" value="3"><label for="star3-camisa">★</label>
-              <input type="radio" id="star2-camisa" name="rating-camisa" value="2"><label for="star2-camisa">★</label>
-              <input type="radio" id="star1-camisa" name="rating-camisa" value="1"><label for="star1-camisa">★</label>
-            </div>
-            <textarea placeholder="Deixe seu pergaminho de feedback..." style="height:60px; padding:8px; font-size:0.8rem;"></textarea>
-            <button type="submit" class="btn" style="padding:6px 12px; font-size:0.8rem; width:fit-content; margin-top:5px;">⭐ Enviar Avaliação</button>
-          </form>
-
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 3: Headset Gamer -->
-    <div id="detail-headset" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/headset.jpg" alt="Headset Gamer">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Arsenal Gamer</span>
-          <h2>Headset Gamer CyberGlow Pro</h2>
-          <p class="description">Escute até mesmo os passos de um ladrão furtivo! O CyberGlow Pro oferece som surround digital 7.1 posicional físico, drivers de neodímio de 50mm, conexão Bluetooth lag-zero e almofadas de memory foam respiráveis com resfriamento por gel.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Drivers: Neodímio 50mm</li>
-              <li>Bateria: Até 48 Horas</li>
-              <li>Som: Surround 7.1</li>
-              <li>RGB Sincronizado: Sim</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 349,90</div>
-          
-          <form action="#" method="POST" onsubmit="return false;" style="padding:15px; border:1px solid var(--border-color); background:none; margin-bottom:20px; gap:8px;">
-            <label style="font-size:0.85rem; color:var(--text-muted); font-weight:700;">Avalie este Item:</label>
-            <div class="interactive-stars">
-              <input type="radio" id="star5-headset" name="rating-headset" value="5"><label for="star5-headset">★</label>
-              <input type="radio" id="star4-headset" name="rating-headset" value="4"><label for="star4-headset">★</label>
-              <input type="radio" id="star3-headset" name="rating-headset" value="3"><label for="star3-headset">★</label>
-              <input type="radio" id="star2-headset" name="rating-headset" value="2"><label for="star2-headset">★</label>
-              <input type="radio" id="star1-headset" name="rating-headset" value="1"><label for="star1-headset">★</label>
-            </div>
-            <button type="submit" class="btn" style="padding:6px 12px; font-size:0.8rem; width:fit-content; margin-top:5px;">⭐ Enviar Avaliação</button>
-          </form>
-
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 4: Jogo Tabuleiro -->
-    <div id="detail-jogo" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/jogo.jpg" alt="Board Game">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Jogos de Tabuleiro</span>
-          <h2>Crônicas da Montanha do Dragão</h2>
-          <p class="description">Um jogo cooperativo medieval de alta estratégia. Reúna sua guilda (1 a 5 jogadores) para explorar masmorras geradas proceduralmente, coletar artefatos épicos e derrotar o temido Dragão Vermelho Ancestral que guarda o tesouro da montanha.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Jogadores: 1 a 5 Jogadores</li>
-              <li>Tempo de Jogo: 90-120 Minutos</li>
-              <li>Componentes: 120 Miniaturas</li>
-              <li>Idade Recomendada: 14+ anos</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 289,90</div>
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 5: Notebook Gamer -->
-    <div id="detail-notebook" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/notebook.jpg" alt="Notebook Gamer">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Arsenal Gamer</span>
-          <h2>Notebook Gamer Supernova Pro</h2>
-          <p class="description">A máquina de jogo definitiva! Equipado com placa gráfica Nvidia GeForce RTX 4080 (16GB GDDR6), processador AMD Ryzen 9 de última geração, 32GB de memória RAM DDR5 e SSD NVMe de 2TB. Rodará qualquer jogo em 4K no ultra a mais de 120 FPS.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Placa de Vídeo: RTX 4080 (16GB)</li>
-              <li>Processador: AMD Ryzen 9 7940HS</li>
-              <li>Memória: 32GB RAM DDR5</li>
-              <li>Tela: 16" IPS 240Hz QHD</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 10.499,90</div>
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 6: Mouse Gamer -->
-    <div id="detail-mouse" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/mouse.jpg" alt="Mouse Gamer">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Arsenal Gamer</span>
-          <h2>Mouse Gamer Hyperion UltraLight</h2>
-          <p class="description">Mira rápida e precisão absoluta. Pesando apenas 49 gramas, este mouse gamer sem fio possui sensor óptico de 26.000 DPI reais, switches ópticos com ciclo de 90 milhões de cliques e latência ultrabaixa de 0.25ms.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Peso: 49g Ultraleve</li>
-              <li>Resolução: 26.000 DPI</li>
-              <li>Conexão: 2.4GHz / BT / USB</li>
-              <li>Switches: Ópticos Gen-3</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 219,90</div>
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 7: Processador CPU -->
-    <div id="detail-cpu" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/cpu.png" alt="Processador Intel Core i9">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">Computadores & Hardware</span>
-          <h2>Processador Intel Core i9-14900K</h2>
-          <p class="description">Eleve a performance do seu setup ao patamar supremo. Equipado com a arquitetura híbrida de 14ª geração da Intel, este monstro traz 24 núcleos de processamento (8 P-cores e 16 E-cores), clock máximo de 5.8 GHz e suporte a memórias DDR5. Ideal para entusiastas, gamers competitivos e criadores de conteúdo exigentes.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Geração: 14ª Geração Intel</li>
-              <li>Núcleos / Threads: 24 Cores / 32 Threads</li>
-              <li>Frequência Máxima: 5.80 GHz</li>
-              <li>Soquete: LGA1700</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 3.899,90</div>
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-    <!-- Modal 8: Livro D&D -->
-    <div id="detail-livro" class="detail-modal">
-      <div class="detail-card">
-        <a href="#store-catalog" class="detail-close">&times;</a>
-        <div class="detail-gallery">
-          <img src="img/dados.jpg" alt="Livro de RPG D&D">
-        </div>
-        <div class="detail-body">
-          <span class="product-cat">RPG & Livros</span>
-          <h2>Livro do Jogador D&D 5ª Edição Premium</h2>
-          <p class="description">O livro essencial para todo aventureiro das masmorras. Contém todas as regras de criação de personagens, histórico, perícias, raças, classes (guerreiro, mago, ladino e mais), equipamentos e uma biblioteca completa de feitiços de magia. Capa dura premium com acabamento rúnico metalizado.</p>
-          <div class="detail-specs">
-            <h4>Especificações Técnicas</h4>
-            <ul>
-              <li>Editora: Wizards of the Coast</li>
-              <li>Idioma: Português BR</li>
-              <li>Páginas: 320 páginas - Capa Dura</li>
-              <li>Edição: 5ª Edição Oficial</li>
-            </ul>
-          </div>
-          <div style="font-weight:700; color:var(--color-secondary); font-size:1.6rem; margin-bottom:20px;">R$ 249,90</div>
-          <a href="#store-catalog" class="btn" style="width:100%;">⚔️ Colocar na Mochila (Comprar)</a>
-        </div>
-      </div>
-    </div>
-
-
-    <!-- ==========================================================================
-       🛒 SEÇÃO: CHECKOUT E SISTEMA DE PAGAMENTO (100% CSS)
-       ========================================================================== -->
-    <section id="checkout-form" style="margin-top: 80px; margin-bottom: 60px; scroll-margin-top: 100px;">
-      <div class="section-header">
-        <h2>💳 Fechar Pedido e <span>Checkout</span></h2>
-        <p style="margin:0; color:var(--text-muted);">Confirme os dados de envio e selecione o método de pagamento</p>
       </div>
 
-      <div class="admin-tabs-container" style="grid-template-columns: 1fr 1fr; background:none; border:none; box-shadow:none;">
-        
-        <!-- ELEMENTO DA IMAGEM 2: form (Formulário do Checkout) -->
-        <form action="#" method="POST" onsubmit="return false;" style="gap:20px; height:fit-content;">
-          <h3 style="margin:0 0 10px 0; font-size:1.25rem; color:var(--color-primary); border-bottom:1px solid var(--border-color); padding-bottom:8px;">📬 Dados de Envio</h3>
-          
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label for="check-name" style="font-size:0.85rem; color:var(--text-muted);">Nome Completo do Comprador</label>
-            <input type="text" id="check-name" placeholder="Ex: Frodo Bolseiro" required>
-          </div>
+    </article>
 
-          <div style="display:grid; grid-template-columns: 1.2fr 0.8fr; gap:15px;">
-            <div style="display:flex; flex-direction:column; gap:6px;">
-              <label for="check-email" style="font-size:0.85rem; color:var(--text-muted);">E-mail de Contato</label>
-              <input type="email" id="check-email" placeholder="frodo@condado.com" required>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:6px;">
-              <label for="check-phone" style="font-size:0.85rem; color:var(--text-muted);">Telefone Celular</label>
-              <input type="text" id="check-phone" placeholder="(11) 99999-9999" required>
-            </div>
-          </div>
+    <!-- PRODUTO 6 -->
+    <article class="cartao-produto">
 
-          <div style="display:flex; flex-direction:column; gap:6px;">
-            <label for="check-address" style="font-size:0.85rem; color:var(--text-muted);">Endereço de Entrega</label>
-            <input type="text" id="check-address" placeholder="Ex: Bolsão, Rua do Condado, Nº 01" required>
-          </div>
+      <img src="imagens/tabuleiro.jpeg" alt="Jogo de Tabuleiro">
 
-          <div style="display:grid; grid-template-columns: 1fr 1fr; gap:15px;">
-            <div style="display:flex; flex-direction:column; gap:6px;">
-              <label for="check-cep" style="font-size:0.85rem; color:var(--text-muted);">CEP</label>
-              <input type="text" id="check-cep" placeholder="00000-000" required>
-            </div>
-            <div style="display:flex; flex-direction:column; gap:6px;">
-              <label for="check-city" style="font-size:0.85rem; color:var(--text-muted);">Cidade / Estado</label>
-              <input type="text" id="check-city" placeholder="Condado / Terra Média" required>
-            </div>
-          </div>
-        </form>
+      <div class="info-produto">
 
-        <!-- Formulário Seção Pagamento (Técnica CSS Radio Hack para trocar métodos) -->
-        <div style="background-color: var(--bg-secondary); border: 1px solid var(--border-color); border-radius: 16px; padding: 24px; display:flex; flex-direction:column;">
-          <h3 style="margin:0 0 20px 0; font-size:1.25rem; color:var(--color-primary); border-bottom:1px solid var(--border-color); padding-bottom:8px;">💳 Métodos de Pagamento</h3>
-          
-          <!-- Rádios de seleção de pagamento -->
-          <input type="radio" id="pay-card" name="pay-method" class="state-toggle" checked>
-          <input type="radio" id="pay-pix" name="pay-method" class="state-toggle">
-          <input type="radio" id="pay-boleto" name="pay-method" class="state-toggle">
+        <span class="categoria">🏰 Jogo de Tabuleiro</span>
 
-          <!-- Botões Label estilizados como abas -->
-          <div class="payment-selector">
-            <label for="pay-card" class="payment-label" id="pay-card-label">
-              <span>💳</span>
-              <span>Cartão</span>
-            </label>
-            <label for="pay-pix" class="payment-label" id="pay-card-pix">
-              <span>⚡</span>
-              <span>Pix</span>
-            </label>
-            <label for="pay-boleto" class="payment-label" id="pay-card-boleto">
-              <span>📄</span>
-              <span>Boleto</span>
-            </label>
-          </div>
+        <h2>Jogo de Tabuleiro</h2>
 
-          <!-- DETALHE DE PAGAMENTO 1: Cartão de Crédito -->
-          <div class="payment-details-box payment-details-card">
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:0.75rem; color:var(--text-muted);">Número do Cartão de Crédito</label>
-                <input type="text" placeholder="0000 0000 0000 0000">
-              </div>
-              <div style="display:flex; flex-direction:column; gap:4px;">
-                <label style="font-size:0.75rem; color:var(--text-muted);">Nome Impresso no Cartão</label>
-                <input type="text" placeholder="Ex: FRODO BOLSEIRO">
-              </div>
-              <div style="display:grid; grid-template-columns:1.2fr 0.8fr; gap:10px;">
-                <div style="display:flex; flex-direction:column; gap:4px;">
-                  <label style="font-size:0.75rem; color:var(--text-muted);">Expiração</label>
-                  <input type="text" placeholder="MM/AA">
-                </div>
-                <div style="display:flex; flex-direction:column; gap:4px;">
-                  <label style="font-size:0.75rem; color:var(--text-muted);">CVV (Código de Segurança)</label>
-                  <input type="text" placeholder="000">
-                </div>
-              </div>
-            </div>
-          </div>
+        <p class="preco">R$ 499,90</p>
 
-          <!-- DETALHE DE PAGAMENTO 2: PIX QR CODE -->
-          <div class="payment-details-box payment-details-pix">
-            <div class="pix-qr-container">
-              <div class="pix-qr-mock">
-                <!-- Mostra código QR Mock com emojis -->
-                <span style="font-size:3rem; color:black;">📱🤖💻</span>
-              </div>
-              <div style="font-size:0.85rem; color:var(--text-muted);">
-                Aponte sua câmera para o QR Code acima. O pagamento é aprovado instantaneamente pelo Banco Central.
-              </div>
-              <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.8rem; width:100%;">📋 Copiar Chave Pix Copia-e-Cola</button>
-            </div>
-          </div>
+        <a href="contato.html" class="botao">
+          Ver Produto
+        </a>
 
-          <!-- DETALHE DE PAGAMENTO 3: BOLETO BANCÁRIO -->
-          <div class="payment-details-box payment-details-boleto">
-            <div style="display:flex; flex-direction:column; gap:12px;">
-              <div style="font-size:0.85rem; color:var(--text-muted);">
-                Pague em qualquer agência bancária, casa lotérica ou aplicativo até o vencimento. A compensação ocorre em até 2 dias úteis.
-              </div>
-              <div class="boleto-mock">
-                34191.79001 01043.513184 91020.150008 7 93450000051970
-              </div>
-              <button class="btn btn-secondary" style="padding:6px 12px; font-size:0.8rem;">📋 Copiar Código de Barras</button>
-            </div>
-          </div>
-
-          <div style="margin-top:auto; padding-top:20px; border-top:1px solid var(--border-color);">
-            <div style="display:flex; justify-content:space-between; font-weight:700; margin-bottom:15px;">
-              <span>Total do Pedido:</span>
-              <span style="color:var(--color-secondary); font-size:1.25rem;">R$ 519,70</span>
-            </div>
-            <button type="submit" class="btn" style="width:100%;">⚡ Finalizar Compra</button>
-          </div>
-        </div>
       </div>
-    </section>
+
+    </article>
 
   </main>
 
-  <!-- Rodapé Geral da Loja -->
-  <footer id="store-footer">
-    <div class="footer-grid" style="display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 30px; text-align: left;">
-      <!-- Coluna 1: Marca -->
-      <div class="footer-brand">
-        <h3 style="color: var(--color-accent); font-size: 1.4rem; font-weight: 800; margin-bottom: 10px;">⚡ Yushitudo</h3>
-        <p style="font-size: 0.9rem; line-height: 1.5;">O melhor outlet de eletrônicos, hardware e artigos nerds do interior paulista. Criado a partir do DNA da tradicional Yoshitec em São Roque e a estrutura de descontos de outlet da Liquitudo.</p>
-        <div class="footer-socials" style="margin-top: 15px;">
-          <a href="https://instagram.com" class="footer-social-btn" title="Acesse nosso Instagram" target="_blank" rel="noopener noreferrer">ig</a>
-          <a href="https://facebook.com" class="footer-social-btn" title="Curta no Facebook" target="_blank" rel="noopener noreferrer">fb</a>
-          <a href="https://whatsapp.com" class="footer-social-btn" title="Chame no WhatsApp" target="_blank" rel="noopener noreferrer">wa</a>
+  <!-- =========================================
+       RODAPÉ
+  ========================================== -->
+  <footer class="rodape">
+
+    <div class="conteudo-rodape">
+
+      <div class="coluna-rodape">
+        <h4>LOCALIZAÇÃO</h4>
+        <p>Av. CastroConoorSilva</p>
+        <p>Fatecanos- SP</p>
+      </div>
+
+      <div class="coluna-rodape">
+        <h4>CONTATO E REDES SOCIAIS</h4>
+
+        <div class="links-sociais">
+          <a href="https://www.facebook.com/" target="_blank" class="botao-social" aria-label="Facebook">
+            <img src="marcas/facebook.svg" alt="Facebook">
+          </a>
+
+          <a href="https://www.instagram.com/" target="_blank" class="botao-social" aria-label="Instagram">
+            <img src="marcas/instagram.svg" alt="Instagram">
+          </a>
+
+          <a href="https://www.youtube.com/" target="_blank" class="botao-social" aria-label="YouTube">
+            <img src="marcas/youtube.svg" alt="YouTube">
+          </a>
+
+          <a href="https://wa.me/5511999999999" target="_blank" class="botao-social" aria-label="WhatsApp">
+            <img src="marcas/whatsapp.svg" alt="WhatsApp">
+          </a>
         </div>
       </div>
 
-      <!-- Coluna 2: Institucional -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Institucional</h4>
-        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
-          <li><a href="sobre.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Sobre a Yushitudo</a></li>
-          <li><a href="sobre.html#secret-admin-trigger" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Área Administrativa (Mestre)</a></li>
-          <li><a href="contato.html#perguntas-frequentes" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Perguntas Frequentes (FAQ)</a></li>
-          <li><a href="contato.html" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Trabalhe Conosco / Contato</a></li>
-        </ul>
+      <div class="coluna-rodape">
+        <p class="mensagem-rodape">
+          Nós te ajudamos! Entre em contato através de nossas redes sociais.
+        </p>
       </div>
 
-      <!-- Coluna 3: Departamentos -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Departamentos</h4>
-        <ul style="list-style: none; padding: 0; display: flex; flex-direction: column; gap: 8px;">
-          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Computadores e Laptops</a></li>
-          <li><a href="produtos.html#filter-perifericos" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Headsets &amp; Mouses Gamer</a></li>
-          <li><a href="produtos.html#filter-rpg" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Dados de RPG &amp; Board Games</a></li>
-          <li><a href="produtos.html#filter-camisas" style="color: var(--border-color); text-decoration: none; font-size: 0.9rem;">Vestuário Geek &amp; Camisetas</a></li>
-        </ul>
-      </div>
-
-      <!-- Coluna 4: Missivas / Newsletter -->
-      <div class="footer-links-col">
-        <h4 style="color: var(--text-light); font-size: 1.1rem; font-weight: 700; margin-bottom: 15px;">Novidades &amp; Ofertas</h4>
-        <p style="font-size: 0.85rem; line-height: 1.5; color: var(--border-color); margin-bottom: 12px;">Assine nosso correio eletrônico e receba ofertas exclusivas e cupons de outlet em primeira mão.</p>
-        <form action="#" method="POST" onsubmit="return false;" style="display: flex; flex-direction: column; gap: 8px;">
-          <label for="newsletter-email-prod" class="state-toggle" style="position:static; opacity:1; width:auto; height:auto; color:var(--text-light); font-size:0.8rem;">Seu melhor e-mail:</label>
-          <input type="email" id="newsletter-email-prod" placeholder="cliente@yushitudo.com.br" required style="padding: 10px; font-size: 0.9rem;">
-          <button type="submit" class="btn" style="padding: 10px; font-size: 0.9rem; min-height: 40px;">🔔 Inscrever na Lista</button>
-        </form>
-      </div>
     </div>
 
-    <!-- Direitos Autorais -->
-    <div class="footer-bottom" style="margin-top: 30px; border-top: 1px solid rgba(255,255,255,0.1); padding-top: 20px; font-size: 0.85rem; opacity: 0.8;">
-      <p>&copy; 2026 Yushitudo Eletrônicos &amp; Nerd Shop S.A. Todos os direitos reservados. Av. Antonino Dias Bastos, São Roque - SP.</p>
-      <p>Desenvolvido exclusivamente com HTML5 &amp; CSS3 em conformidade com as diretrizes de Acessibilidade WCAG e sem Javascript.</p>
-    </div>
+    <p class="direitos">
+      Copyright © <span>YoshiTudo</span> 2026
+    </p>
+
   </footer>
 
 </body>
 </html>
+
+
