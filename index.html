@@ -1,406 +1,253 @@
+<!-- Declarando que este é um documento HTML5 -->
 <!DOCTYPE html>
+<!-- Elemento raiz do documento com idioma configurado para Português do Brasil -->
 <html lang="pt-BR">
+
+<!-- Cabeçalho do documento contendo metadados, título e folhas de estilo CSS -->
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Taverna Geek | Sua Loja Virtual Nerd & RPG</title>
-  <!-- SEO Meta Tags -->
-  <meta name="description" content="A Taverna Geek é o seu refúgio definitivo para artigos nerds, dados de RPG, camisetas de cultura pop, jogos de tabuleiro e periféricos gamers de alto desempenho.">
-  <meta name="keywords" content="geek, nerd, RPG, dados, board game, camiseta geek, mouse gamer, headset gamer, notebook gamer">
-  <meta name="author" content="Taverna Geek Corp">
-  <!-- CSS Stylesheet -->
-  <link rel="stylesheet" href="css/style.css">
+
+    <!-- Define a codificação de caracteres como UTF-8 para suportar acentuação e caracteres especiais -->
+    <meta charset="UTF-8">
+    <!-- Configura o viewport para tornar o layout responsivo em dispositivos móveis -->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!-- Define o título da página exibido na aba do navegador -->
+    <title>YoshiTudo</title>
+
+    <!-- Links de carregamento dos arquivos de folha de estilo CSS (geral e específico da página) -->
+    <link rel="stylesheet" href="estilos/geral.css">
+    <link rel="stylesheet" href="estilos/index.css">
+
 </head>
+
+<!-- Corpo do site, onde todo o conteúdo visível é inserido -->
 <body>
 
-  <!-- ==========================================================================
-     CSS HACKS - CONTROLES DE ESTADO (CHECKBOXES INVISÍVEIS)
-     ========================================================================== -->
-  <!-- Checkbox para abrir/fechar o carrinho lateral -->
-  <input type="checkbox" id="cart-toggle" class="state-toggle">
-  <!-- Checkbox para abrir/fechar o modal de login/registro -->
-  <input type="checkbox" id="auth-toggle" class="state-toggle">
+    <!-- Cabeçalho principal da página contendo logotipo e o menu de navegação -->
+    <header class="cabecalho">
 
-  <!-- ==========================================================================
-     ELEMENTO DA IMAGEM 2: header (Cabeçalho Geral)
-     ========================================================================== -->
-  <header id="store-header">
-    <!-- Logotipo da Loja -->
-    <a href="index.html" class="logo" id="header-logo">
-      🎲 <span>Taverna Geek</span>
-    </a>
-
-    <!-- ELEMENTO DA IMAGEM 2: nav (Links de Navegação Principal) -->
-    <nav id="header-nav">
-      <!-- ELEMENTO DA IMAGEM 2: a href (Links âncoras) -->
-      <a href="index.html" class="active">Início</a>
-      <a href="produtos.html">Produtos</a>
-      <a href="sobre.html">Sobre Nós</a>
-      <a href="contato.html">Contato</a>
-    </nav>
-
-    <!-- Ícones e Controles do Topo -->
-    <div class="header-actions">
-      <!-- Botão para abrir Login (Lança label que ativa o checkbox auth-toggle) -->
-      <label for="auth-toggle" class="icon-badge-btn" title="Minha Conta">
-        👤
-      </label>
-      
-      <!-- Botão para abrir Carrinho (Lança label que ativa o checkbox cart-toggle) -->
-      <label for="cart-toggle" class="icon-badge-btn" title="Meu Carrinho">
-        🛒 <span class="badge">3</span>
-      </label>
-    </div>
-  </header>
-
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS 1: CARRINHO DE COMPRAS DESLIZANTE (Sidebar)
-     ========================================================================== -->
-  <div class="cart-overlay"></div>
-  <aside class="cart-sidebar" id="cart-panel">
-    <div class="cart-header">
-      <h3>🛒 Seu Carrinho</h3>
-      <!-- Clicar no label fecha o carrinho desmarcando o checkbox -->
-      <label for="cart-toggle" class="cart-close">&times;</label>
-    </div>
-
-    <!-- Lista de Itens no Carrinho -->
-    <div class="cart-items-container">
-      <!-- Item 1: Dados RPG -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <!-- ELEMENTO DA IMAGEM 2: img -->
-          <img src="img/dados.jpg" alt="Dados de RPG de Obsidian">
-        </div>
-        <div class="cart-item-info">
-          <h4>Dados de RPG Runas Douradas</h4>
-          <p>Categoria: RPG & Acessórios</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 89,90</span>
-          </div>
-        </div>
-        <button class="cart-item-remove" title="Remover">&times;</button>
-      </div>
-
-      <!-- Item 2: Headset Gamer -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/headset.jpg" alt="Headset Neon Gamer">
-        </div>
-        <div class="cart-item-info">
-          <h4>Headset Gamer CyberGlow RGB</h4>
-          <p>Categoria: Periféricos</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 349,90</span>
-          </div>
-        </div>
-        <button class="cart-item-remove" title="Remover">&times;</button>
-      </div>
-
-      <!-- Item 3: Camiseta Retro -->
-      <div class="cart-item">
-        <div class="cart-item-img">
-          <img src="img/camisa.jpg" alt="Camiseta Geek Arcade">
-        </div>
-        <div class="cart-item-info">
-          <h4>Camiseta Geek Vaporwave Arcade</h4>
-          <p>Categoria: Vestuário</p>
-          <div class="cart-item-qty">
-            <span>Qtd: 1</span>
-            <span class="price">R$ 79,90</span>
-          </div>
-        </div>
-        <button class="cart-item-remove" title="Remover">&times;</button>
-      </div>
-    </div>
-
-    <!-- Rodapé do Carrinho com Checkout Integrado -->
-    <div class="cart-footer">
-      <div class="cart-total-row">
-        <span>Subtotal:</span>
-        <span>R$ 519,70</span>
-      </div>
-      <a href="produtos.html#checkout-form" class="btn" style="width:100%;">
-        💳 Ir para o Checkout
-      </a>
-    </div>
-  </aside>
-
-  <!-- ==========================================================================
-     INTERATIVIDADE CSS 2: MODAL DE LOGIN E CADASTRO (Auth)
-     ========================================================================== -->
-  <div class="modal-overlay">
-    <div class="auth-card">
-      <div class="auth-header">
-        <h3 style="margin:0; font-size:1.3rem;">🛡️ Área do Taverneiro</h3>
-        <label for="auth-toggle" style="cursor:pointer; font-size:1.5rem; color:var(--text-muted);">&times;</label>
-      </div>
-
-      <!-- Controladores internos de abas do modal (Radio Hack) -->
-      <input type="radio" id="auth-tab-login" name="auth-tabs" class="state-toggle" checked>
-      <input type="radio" id="auth-tab-register" name="auth-tabs" class="state-toggle">
-
-      <!-- Navegação das Abas -->
-      <div class="auth-tabs-nav">
-        <label for="auth-tab-login" class="auth-tab-label">Iniciar Sessão</label>
-        <label for="auth-tab-register" class="auth-tab-label">Registrar Guilda</label>
-      </div>
-
-      <!-- ELEMENTO DA IMAGEM 2: form (Formulário de Login) -->
-      <form class="auth-form-block form-login" id="login-form" action="#" method="POST" onsubmit="return false;">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label for="login-email" style="font-size:0.85rem; color:var(--text-muted);">Seu E-mail de Mago</label>
-          <input type="email" id="login-email" placeholder="nome@guilda.com" required>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label for="login-password" style="font-size:0.85rem; color:var(--text-muted);">Senha Secreta</label>
-          <input type="password" id="login-password" placeholder="••••••••" required>
-        </div>
-        <button type="submit" class="btn">⚔️ Entrar na Taverna</button>
-        
-        <div style="text-align:center; font-size:0.85rem; color:var(--text-muted); margin-top:10px;">
-          Ou entre com suas runas sociais:
-        </div>
-        <div class="auth-social">
-          <button type="button" class="btn-social">🌐 Google</button>
-          <button type="button" class="btn-social">👾 Discord</button>
-        </div>
-      </form>
-
-      <!-- Formulário de Registro -->
-      <form class="auth-form-block form-register" id="register-form" action="#" method="POST" onsubmit="return false;">
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label for="reg-name" style="font-size:0.85rem; color:var(--text-muted);">Nome do Personagem (Usuário)</label>
-          <input type="text" id="reg-name" placeholder="Ex: LegolasDaSilva" required>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label for="reg-email" style="font-size:0.85rem; color:var(--text-muted);">E-mail de Contato</label>
-          <input type="email" id="reg-email" placeholder="mestre@caverna.com" required>
-        </div>
-        <div style="display:flex; flex-direction:column; gap:6px;">
-          <label for="reg-pass" style="font-size:0.85rem; color:var(--text-muted);">Nova Senha</label>
-          <input type="password" id="reg-pass" placeholder="Mínimo 8 runas" required>
-        </div>
-        <div style="display:flex; align-items:center; gap:10px; font-size:0.85rem;">
-          <input type="checkbox" id="reg-terms" required style="width:16px; height:16px;">
-          <label for="reg-terms">Aceito os termos do Pergaminho de Regras</label>
-        </div>
-        <button type="submit" class="btn btn-secondary">📜 Concluir Cadastro</button>
-      </form>
-    </div>
-  </div>
-
-  <!-- Hero Section (Banner de Destaque Visual) -->
-  <section class="hero" id="home-hero">
-    <div class="hero-particles"></div>
-    <div class="hero-content">
-      <span class="hero-tag">Aventuras te aguardam</span>
-      <h1>Equipe sua jornada com artigos <span>lendários</span></h1>
-      <p>Dados de RPG mágicos, camisetas de cultura pop exclusivas, board games incríveis e periféricos de nível profissional. Tudo em até 10x sem juros no pergaminho de ouro.</p>
-      <div class="hero-buttons">
-        <a href="produtos.html" class="btn">🛒 Explorar Catálogo</a>
-        <a href="sobre.html" class="btn btn-secondary">🏰 Conhecer Taverna</a>
-      </div>
-    </div>
-  </section>
-
-  <!-- ELEMENTO DA IMAGEM 2: main (Conteúdo Principal) -->
-  <main id="main-content">
-    
-    <!-- Seção de Categorias Populares -->
-    <section id="categories-section">
-      <div class="section-header">
-        <h2>🛍️ Navegar por <span>Mundos</span></h2>
-        <a href="produtos.html" class="btn-link" style="color:var(--color-primary); font-weight:700;">Ver todos os reinos &rarr;</a>
-      </div>
-
-      <div class="categories-grid">
-        <!-- Categoria 1: RPG -->
-        <a href="produtos.html#filter-rpg" class="category-card">
-          <span class="category-icon">🐉</span>
-          <h3>Aventuras de RPG</h3>
-          <p>Dados, livros, miniaturas e mestres</p>
+        <!-- Link de logotipo que redireciona de volta à página inicial -->
+        <a href="index.html" class="logotipo">
+            ⚡ YoshiTudo
         </a>
 
-        <!-- Categoria 2: Periféricos -->
-        <a href="produtos.html#filter-perifericos" class="category-card">
-          <span class="category-icon">⚡</span>
-          <h3>Arsenal Gamer</h3>
-          <p>Headsets, mouses e laptops de alta gama</p>
-        </a>
+        <!-- Menu de navegação para alternar entre as páginas do site -->
+        <nav class="menu">
 
-        <!-- Categoria 3: Camisas -->
-        <a href="produtos.html#filter-camisas" class="category-card">
-          <span class="category-icon">👕</span>
-          <h3>Vestuário Geek</h3>
-          <p>Camisetas, moletons e bonés estilosos</p>
-        </a>
+            <a href="index.html" class="ativo">Início</a>
+            <a href="produtos.html">Produtos</a>
+            <a href="sobre.html">Sobre</a>
+            <a href="contato.html">Contato</a>
 
-        <!-- Categoria 4: Jogos -->
-        <a href="produtos.html#filter-jogos" class="category-card">
-          <span class="category-icon">🏰</span>
-          <h3>Jogos de Tabuleiro</h3>
-          <p>Card games e board games clássicos</p>
-        </a>
-      </div>
+        </nav>
+
+    </header>
+
+    <!-- Seção de Banner Principal/Apresentação (Faixa) -->
+    <section class="faixa">
+
+        <!-- Título principal da seção (nível 1 de importância) -->
+        <h1>
+            ABERTO TODOS OS DIAS DAS 10 AS 19 HORAS
+        </h1>
+
+        <!-- Parágrafo simples com o endereço físico -->
+        <p>
+            Av. Antonino Dias Bastos - São Roque/SP
+        </p>
+
+        <!-- Container (div) para agrupar os botões de ação rápidos -->
+        <div class="botoes-faixa">
+
+            <!-- Link que abre a localização física no Google Maps -->
+            <a href="https://www.google.com/maps/search/?api=1&query=Av.+Antonino+Dias+Bastos+Sao+Roque+SP">
+                📍 Ver no Maps
+            </a>
+
+            <!-- Link para iniciar conversa no WhatsApp em uma nova aba (_blank) -->
+            <a href="https://wa.me/5511999999999" target="_blank" class="botao-whatsapp">
+                <!-- Tag de imagem para exibir o ícone do WhatsApp com texto alternativo (alt) -->
+                <img src="marcas/whatsapp.svg" alt="WhatsApp">
+                WhatsApp
+            </a>
+
+        </div>
+
     </section>
 
-    <!-- Seção de Produtos em Destaque -->
-    <section id="featured-products">
-      <div class="section-header">
-        <h2>🔥 Itens em <span>Destaque</span> na Guilda</h2>
-        <p style="margin:0; color:var(--text-muted); font-size:0.95rem;">Ofertas por tempo limitado até o próximo eclipse solar</p>
-      </div>
+    <!-- Seção de Chamada/Título em Destaque -->
+    <section class="chamada">
 
-      <div class="products-home-grid">
-        
-        <!-- CARD DO PRODUTO 1: Dados RPG (dados.jpg) -->
-        <!-- ELEMENTO DA IMAGEM 2: article (Cards) -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Populares</span>
-            <img src="img/dados.jpg" alt="Dados de RPG Runas Douradas">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">RPG & Acessórios</span>
-            <a href="produtos.html#detail-dados" class="product-title">Dados de RPG Místicos - Runas Douradas (Set d20)</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(42)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 120,00</span>
-                <span class="current-price">R$ 89,90</span>
-              </div>
-              <a href="produtos.html#detail-dados" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Espiar</a>
-            </div>
-          </div>
-        </article>
+        <!-- Título de nível 2 descrevendo o nicho dos produtos vendidos -->
+        <h2>
+            NOTEBOOKS GAMER, HEADSETS RGB, HARDWARE,
+            MOUSES, LIVROS RPG E MUITO MAIS...
+        </h2>
 
-        <!-- CARD DO PRODUTO 2: Camiseta Arcade (camisa.jpg) -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-new">Novidade</span>
-            <img src="img/camisa.jpg" alt="Camiseta Geek Arcade">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Vestuário Geek</span>
-            <a href="produtos.html#detail-camisa" class="product-title">Camiseta Geek Premium - Vaporwave Arcade 1980</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐★ <span class="rating-count">(19)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="current-price">R$ 79,90</span>
-              </div>
-              <a href="produtos.html#detail-camisa" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Espiar</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 3: Headset Gamer (headset.jpg) -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <span class="product-badge badge-promo">Oferta</span>
-            <img src="img/headset.jpg" alt="Headset Gamer CyberGlow">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Arsenal Gamer</span>
-            <a href="produtos.html#detail-headset" class="product-title">Headset Gamer Wireless CyberGlow Pro Surround 7.1</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐⭐ <span class="rating-count">(87)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="old-price">R$ 450,00</span>
-                <span class="current-price">R$ 349,90</span>
-              </div>
-              <a href="produtos.html#detail-headset" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Espiar</a>
-            </div>
-          </div>
-        </article>
-
-        <!-- CARD DO PRODUTO 4: Jogo de Tabuleiro (jogo.jpg) -->
-        <article class="product-card">
-          <div class="product-img-wrapper">
-            <img src="img/jogo.jpg" alt="Jogo de Tabuleiro Dragon Quest">
-          </div>
-          <div class="product-info">
-            <span class="product-cat">Jogos de Tabuleiro</span>
-            <a href="produtos.html#detail-jogo" class="product-title">Board Game Clássico - Crônicas da Montanha do Dragão</a>
-            <div class="rating-stars">
-              ⭐⭐⭐⭐★ <span class="rating-count">(31)</span>
-            </div>
-            <div class="product-price-row">
-              <div class="price-container">
-                <span class="current-price">R$ 289,90</span>
-              </div>
-              <a href="produtos.html#detail-jogo" class="btn btn-secondary" style="padding: 8px 16px; font-size: 0.85rem;">🛡️ Espiar</a>
-            </div>
-          </div>
-        </article>
-
-      </div>
     </section>
-  </main>
 
-  <!-- Rodapé Geral da Loja -->
-  <footer id="store-footer">
-    <div class="footer-grid">
-      <!-- Coluna 1: Marca -->
-      <div class="footer-brand">
-        <h3>🎲 Taverna Geek</h3>
-        <p>Desde 2018 provendo magias de cura, dados perfeitamente balanceados e vestimentas mágicas para as mais perigosas jornadas em D&D e na vida cotidiana.</p>
-        <div class="footer-socials">
-          <a href="#" class="footer-social-btn" title="Facebook">f</a>
-          <a href="#" class="footer-social-btn" title="Instagram">ig</a>
-          <a href="#" class="footer-social-btn" title="Discord">👾</a>
-          <a href="#" class="footer-social-btn" title="Twitch">📺</a>
+    <!-- Conteúdo Principal da página (neste caso, a lista de produtos) -->
+    <main class="produtos">
+
+        <!-- Cabeçalho interno da seção de produtos -->
+        <div class="titulo-secao">
+
+            <h2>🔥 Super Ofertas</h2>
+
+            <p>
+                Produtos em destaque da semana
+            </p>
+
         </div>
-      </div>
 
-      <!-- Coluna 2: Links Úteis -->
-      <div class="footer-links-col">
-        <h4>A Guilda</h4>
-        <ul>
-          <li><a href="sobre.html">Quem Somos</a></li>
-          <li><a href="sobre.html#secret-admin-trigger">Painel de Mestre (Admin)</a></li>
-          <li><a href="contato.html#perguntas-frequentes">FAQ das Masmorras</a></li>
-          <li><a href="#">Pergaminho de Termos</a></li>
-        </ul>
-      </div>
+        <!-- Grid layout contendo os cartões de produtos -->
+        <div class="grade-produtos">
 
-      <!-- Coluna 3: Categorias -->
-      <div class="footer-links-col">
-        <h4>Mundos</h4>
-        <ul>
-          <li><a href="produtos.html#filter-rpg">Livros de RPG & Dados</a></li>
-          <li><a href="produtos.html#filter-perifericos">Mouses & Headsets</a></li>
-          <li><a href="produtos.html#filter-camisas">Camisetas Colecionáveis</a></li>
-          <li><a href="produtos.html#filter-jogos">Jogos Cooperativos</a></li>
-        </ul>
-      </div>
+            <!-- Artigo que representa um produto individual (card) -->
+            <article class="cartao">
 
-      <!-- Coluna 4: Newsletter -->
-      <div class="footer-links-col">
-        <h4>Missivas e Avisos</h4>
-        <p style="font-size:0.85rem; margin-bottom:12px;">Seja o primeiro a saber de novas pilhagens e loots. Cadastre seu correio coruja.</p>
-        <!-- ELEMENTO DA IMAGEM 2: form (Mini formulário de Newsletter) -->
-        <form action="#" method="POST" onsubmit="return false;" style="padding:0; border:none; background:none; gap:10px;">
-          <input type="email" placeholder="seu-email@guilda.com" required style="padding:10px;">
-          <button type="submit" class="btn" style="padding:10px 15px; font-size:0.9rem;">🔔 Inscrever Coruja</button>
-        </form>
-      </div>
-    </div>
+                <!-- Imagem -->
+                <img src="imagens/notebook.jpeg" alt="Notebook Gamer">
 
-    <!-- Direitos Autorais -->
-    <div class="footer-bottom">
-      <p>&copy; 2026 Taverna Geek S.A. Todos os direitos reservados nas sete províncias.</p>
-      <p>Desenvolvido exclusivamente com HTML5 &amp; CSS3 (Sem JS).</p>
-    </div>
-  </footer>
+                <!-- Informações -->
+                <div class="info-cartao">
+
+                    <span class="categoria">
+                        💻 Computadores
+                    </span>
+
+                    <h3>
+                        Notebook Gamer RTX
+                    </h3>
+
+                    <p class="preco">
+                        <span class="preco-de">De R$ 12.999,90</span>
+                        <span class="preco-por">Por R$ 10.499,90</span>
+                    </p>
+
+                    <!-- Botão -->
+                    <a href="produtos.html" class="botao">
+                        Ver Produto
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Card Produto -->
+            <article class="cartao">
+
+                <img src="imagens/headset.jpeg" alt="Headset Gamer">
+
+                <div class="info-cartao">
+
+                    <span class="categoria">
+                        🎧 Headsets
+                    </span>
+
+                    <h3>
+                        Headset RGB
+                    </h3>
+
+                    <p class="preco">
+                        <span class="preco-de">De R$ 199,90</span>
+                        <span class="preco-por">Por R$ 149,90</span>
+                    </p>
+
+                    <a href="produtos.html" class="botao">
+                        Ver Produto
+                    </a>
+
+                </div>
+
+            </article>
+
+            <!-- Card Produto -->
+            <article class="cartao">
+
+                <img src="imagens/mouse.jpeg" alt="Mouse Gamer">
+
+                <div class="info-cartao">
+
+                    <span class="categoria">
+                        🖱️ Mouses
+                    </span>
+
+                    <h3>
+                        Mouse Gamer RGB
+                    </h3>
+
+                    <p class="preco">
+                        <span class="preco-de">De R$ 109,90</span>
+                        <span class="preco-por">Por R$ 79,90</span>
+                    </p>
+
+                    <a href="produtos.html" class="botao">
+                        Ver Produto
+                    </a>
+
+                </div>
+
+            </article>
+
+        </div>
+
+    </main>
+
+    <!-- ========================= -->
+    <!-- RODAPÉ -->
+    <!-- ========================= -->
+
+    <footer class="rodape">
+
+        <div class="conteudo-rodape">
+
+            <div class="coluna-rodape">
+                <h4>LOCALIZAÇÃO</h4>
+                <p>Av. CastroConoorSilva</p>
+                <p>Fatecanos- SP</p>
+            </div>
+
+            <div class="coluna-rodape">
+                <h4>CONTATO E REDES SOCIAIS</h4>
+
+                <div class="links-sociais">
+                    <a href="https://www.facebook.com/" target="_blank" class="botao-social" aria-label="Facebook">
+                        <img src="marcas/facebook.svg" alt="Facebook">
+                    </a>
+
+                    <a href="https://www.instagram.com/" target="_blank" class="botao-social" aria-label="Instagram">
+                        <img src="marcas/instagram.svg" alt="Instagram">
+                    </a>
+
+                    <a href="https://www.youtube.com/" target="_blank" class="botao-social" aria-label="YouTube">
+                        <img src="marcas/youtube.svg" alt="YouTube">
+                    </a>
+
+                    <a href="https://wa.me/5511999999999" target="_blank" class="botao-social" aria-label="WhatsApp">
+                        <img src="marcas/whatsapp.svg" alt="WhatsApp">
+                    </a>
+                </div>
+            </div>
+
+            <div class="coluna-rodape">
+                <p class="mensagem-rodape">
+                    Nós te ajudamos! Entre em contato através de nossas redes sociais.
+                </p>
+            </div>
+
+        </div>
+
+        <p class="direitos">
+            Copyright © <span>YoshiTudo</span> 2026
+        </p>
+
+    </footer>
 
 </body>
+
 </html>
+
+
+
+
