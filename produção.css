@@ -1,0 +1,27 @@
+/* =========================================================
+   CSS DA PÁGINA DE PRODUTOS
+========================================================= */
+.filtros {
+  max-width: 1100px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: .7rem;
+}
+
+.filtros button {
+  border: 1px solid var(--cor-principal);
+  background: var(--fundo-principal);
+  color: var(--cor-principal);
+  padding: .7rem 1rem;
+  border-radius: 8px;
+  font-weight: 700;
+  cursor: pointer;
+}
+
+.filtros button:hover {
+  background: var(--cor-principal);
+  color: var(--texto-claro);
+}
