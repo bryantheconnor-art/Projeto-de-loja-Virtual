@@ -1,0 +1,332 @@
+/* =========================================================
+   CSS GLOBAL - usado em todas as páginas
+========================================================= */
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@300;400;500;600;700;800&family=Inter:wght@400;500;600;700&display=swap');
+
+:root {
+  --cor-principal: #0075bd;
+  --cor-principal-hover: #800000;
+  --cor-secundaria: #1e3d59;
+  --cor-destaque: #ffca00;
+  --fundo-principal: #ffffff;
+  --fundo-claro: #f7f9fa;
+  --fundo-escuro: #121212;
+  --texto-escuro: #1a1a1a;
+  --texto-suave: #555555;
+  --texto-claro: #ffffff;
+  --borda: #dddddd;
+  --sombra: 0 4px 12px rgba(0, 0, 0, .10);
+  --raio: 12px;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Outfit', 'Inter', Arial, sans-serif;
+  background: var(--fundo-principal);
+  color: var(--texto-escuro);
+  line-height: 1.5;
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column; 
+}
+
+img {
+  width: 100%;
+  display: block;
+}
+
+a {
+  text-decoration: none;
+}
+
+section {
+  margin-bottom: 2.5rem;
+}
+
+main {
+  max-width: 1100px;
+  margin: auto;
+  padding: 1.5rem 1rem;
+}
+
+/* Cabeçalho */
+.cabecalho {
+  background: var(--cor-principal);
+  border-bottom: 3px solid var(--cor-destaque);
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  z-index: 1000;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1rem;
+}
+
+.logotipo {
+  color: var(--texto-claro);
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+
+.menu {
+  display: flex;
+  flex-wrap: wrap;
+  gap: .5rem;
+}
+
+.menu a {
+  color: var(--texto-claro);
+  font-weight: 700;
+  padding: .5rem .7rem;
+  border-radius: 6px;
+}
+
+.menu a:hover,
+.menu a.ativo {
+  background: var(--cor-destaque);
+  color: var(--texto-escuro);
+}
+
+.icones {
+  display: flex;
+  gap: .5rem;
+}
+
+.icones button,
+.botao-icone {
+  border: 0;
+  background: rgba(255, 255, 255, .15);
+  color: var(--texto-claro);
+  width: 42px;
+  height: 42px;
+  border-radius: 8px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Títulos comuns */
+.titulo-pagina {
+  text-align: center;
+  background: var(--fundo-claro);
+  padding: 2.5rem 1rem;
+}
+
+.titulo-pagina h1 {
+  color: var(--cor-principal);
+  margin-bottom: .5rem;
+}
+
+.titulo-pagina p,
+.titulo-secao p {
+  color: var(--texto-suave);
+}
+
+.titulo-secao {
+  text-align: center;
+  margin-bottom: 1.5rem;
+}
+
+/* Botões */
+.botao {
+  background: var(--cor-principal);
+  color: var(--texto-claro);
+  padding: .8rem 1.2rem;
+  border-radius: 8px;
+  border: 0;
+  font-weight: 700;
+  cursor: pointer;
+  display: inline-block;
+}
+
+.botao:hover {
+  background: var(--cor-principal-hover);
+}
+
+/* Produtos e cartoes */
+.grade-produtos,
+.cartoes {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+}
+
+.cartao,
+.cartao-produto {
+  background: var(--fundo-principal);
+  border: 1px solid var(--borda);
+  border-radius: var(--raio);
+  box-shadow: var(--sombra);
+  overflow: hidden;
+}
+
+.cartao img,
+.cartao-produto img {
+  height: 220px;
+  object-fit: cover;
+}
+
+.info-cartao,
+.info-produto {
+  padding: 1.2rem;
+}
+
+.cartoes .cartao {
+  padding: 1.2rem;
+}
+
+.categoria {
+  color: var(--cor-secundaria);
+  font-weight: 700;
+  font-size: .9rem;
+}
+
+.cartao h3,
+.cartao-produto h2 {
+  margin: .5rem 0;
+}
+
+.preco {
+  color: var(--cor-principal);
+  font-size: 1.3rem;
+  font-weight: 800;
+  margin-bottom: 1rem;
+}
+
+.preco-de {
+  display: block;
+  color: var(--texto-suave);
+  font-size: .95rem;
+  font-weight: 600;
+  text-decoration: line-through;
+}
+
+.preco-por {
+  display: block;
+  color: var(--cor-principal);
+}
+
+/* Formulários */
+form {
+  display: flex;
+  flex-direction: column;
+  gap: .8rem;
+}
+
+label {
+  font-weight: 700;
+}
+
+input,
+textarea,
+select {
+  width: 100%;
+  padding: .8rem;
+  border: 1px solid var(--borda);
+  border-radius: 6px;
+  font-family: inherit;
+  font-size: 1rem;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* Rodapé */
+.rodape {
+  background: var(--fundo-escuro);
+  color: var(--texto-claro);
+  padding: 2.5rem 1rem 1rem;
+  text-align: center;
+  margin-top: auto;
+}
+
+.conteudo-rodape {
+  max-width: 1100px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.coluna-rodape h4 {
+  font-size: 1.15rem;
+  margin-bottom: .9rem;
+}
+
+.coluna-rodape p {
+  font-size: .95rem;
+  font-weight: 500;
+  margin: .2rem 0;
+}
+
+.mensagem-rodape {
+  font-weight: 800;
+}
+
+.links-sociais {
+  display: flex;
+  justify-content: center;
+  gap: .6rem;
+}
+
+.botao-social {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: transform .2s ease, filter .2s ease;
+}
+
+.botao-social:hover {
+  transform: translateY(-3px);
+  filter: brightness(1.1);
+}
+
+.botao-social img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+}
+
+.direitos {
+  margin-top: 2.5rem;
+  text-align: center;
+  font-size: .8rem;
+}
+
+.direitos span {
+  color: var(--cor-principal);
+  font-weight: 800;
+}
+
+@media (max-width: 800px) {
+  .cabecalho {
+    flex-direction: column;
+  }
+
+  .grade-produtos,
+  .cartoes,
+  .conteudo-rodape {
+    grid-template-columns: 1fr;
+  }
+
+  .rodape {
+    padding-top: 2rem;
+  }
+
+  .direitos {
+    margin-top: 1.5rem;
+  }
+}
